@@ -1,0 +1,13 @@
+@import './../../Common/variables.scss';
+
+.catalog { 
+    min-width: $catalog-width;
+    background-color: white;
+    padding: 16px;
+    border-radius: 15px; 
+    margin-right: 3px;
+    @include block-box-shadow;
+    .categories_list {
+        line-height: 1.8;
+    }
+}

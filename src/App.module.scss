@@ -1,0 +1,12 @@
+@import './Common/variables.scss';
+
+.app {
+    
+    .container { 
+        margin: 100px auto 0 auto;
+        max-width: $container;
+        padding: 16px; 
+        display: flex; 
+        justify-content: space-between;
+    }
+}

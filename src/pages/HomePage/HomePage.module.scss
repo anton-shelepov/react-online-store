@@ -1,0 +1,10 @@
+@import "./../../Common/variables.scss";
+
+.home {
+    max-width: $content-width;
+    width: 100%;
+    background-color: white;
+    @include block-box-shadow;
+    padding: 16px;
+    border-radius: 15px;
+}

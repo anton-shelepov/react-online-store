@@ -1,0 +1,27 @@
+@import './../../Common/variables.scss';
+
+.header {
+    background: linear-gradient(to right, #cb115f 0, #3e7692 100%) no-repeat;
+    min-height: 100px;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    a {
+        color: white;
+    }
+    .container {
+        max-width: $container;
+        margin: 0 auto; 
+        padding: 16px;
+        .block_top {
+            display: flex;
+            justify-content: space-between;
+        }
+        .block_bottom {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
