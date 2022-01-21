@@ -1,0 +1,14 @@
+@import "./../../Common/variables.scss";
+
+.discounts {
+    margin-top: 55px;
+    display: flex;
+    .discount_item { 
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        margin-right: 10px; 
+        border-radius: 20px;
+        @include card-box-shadow;
+    }
+}

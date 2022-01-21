@@ -1,8 +1,8 @@
-@import './../../Common/variables.scss';
+@import "./../../Common/variables.scss";
 
 .header {
+    z-index: 1000;
     background: linear-gradient(to right, #cb115f 0, #3e7692 100%) no-repeat;
-    min-height: 100px;
     color: white;
     position: fixed;
     width: 100%;
@@ -12,16 +12,55 @@
         color: white;
     }
     .container {
+        padding: 0 16px;
         max-width: $container;
-        margin: 0 auto; 
-        padding: 16px;
-        .block_top {
-            display: flex;
-            justify-content: space-between;
+        min-height: 100px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .logo {
+            svg {
+                height: 75px;
+                width: 250px;
+            }
         }
-        .block_bottom {
-            display: flex;
-            justify-content: space-between;
+        .info {
+            .block_bottom {
+                .nav {
+                    .item { 
+                        margin-left: 20px;
+                        display: inline-flex; 
+                        flex-direction: column;
+                        align-items: center;
+                        svg {
+                            margin-bottom: 2px;
+                            filter: invert(1);
+                            width: 25px;
+                            height: 25px;
+                        }
+                    }
+                    
+                }
+            }
+        }
+
+        input {
+            // TODO: ВЫНЕСТИ В КОМПОНЕНТ INPUT
+            width: 50%;
+            height: 40px;
+            border-radius: 30px;
+            border: none;
+            padding: 8px 20px;
+            font-size: 20px;
+            opacity: 0.4;
+            outline: none;
+            transition: all 0.2s;
+            &:focus {
+                border: 1px solid white;
+                opacity: 1;
+                transition: all 0.2s;
+            }
         }
     }
 }
