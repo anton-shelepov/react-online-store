@@ -1,6 +1,6 @@
 import { combineReducers, createStore } from "redux" 
-import { IHomeState } from "../Actions/HomeActions/homeTypes";
-import homeReducer from "../Reducers/homeReducer"
+import { IHomeState } from "../Types/homeTypes";
+import homeReducer from "./Reducers/homeReducer"
 
 export interface IRootState {
     home: IHomeState;

@@ -1,6 +1,6 @@
-import { IAddDiscountItem, IHomeState } from "../Actions/HomeActions/homeTypes";
+import { IHomeState } from "../../Types/homeTypes";
 
-const initialState: IHomeState = {
+const initialState: IHomeState = { 
     discounts: [
         {
             title: "Компьютеры ASUS",
@@ -8,22 +8,22 @@ const initialState: IHomeState = {
             discountSize: "Скидки до 50%",
         },
         {
-            title: "Компьютеры ASUS",
+            title: "Компьютеры Samsung",
             description: "Зимняя распродажа производителя",
             discountSize: "Скидки до 50%",
         },
         {
-            title: "Компьютеры ASUS",
+            title: "Компьютеры Intel",
             description: "Зимняя распродажа производителя",
             discountSize: "Скидки до 50%",
         },
         {
-            title: "Компьютеры ASUS",
+            title: "Компьютеры AMD",
             description: "Зимняя распродажа производителя",
             discountSize: "Скидки до 50%",
         },
     ]
-}
+} 
 
 
 const HomeReducer = (state: IHomeState = initialState, action: any): IHomeState => {

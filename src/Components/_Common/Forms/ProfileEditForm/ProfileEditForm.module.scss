@@ -1,0 +1,27 @@
+@import "./../../../../Components/_Common/variables.scss";
+@import "./../../../../Components/_Common/mixins.scss";
+
+.profile_edit {
+    display: flex;
+    flex-direction: column;
+    @include card-box-shadow;
+    padding: 25px;
+    border-radius: $card-border-radius;
+
+    .title {
+        font-weight: 600;
+    }
+    .subtitle {
+        margin: 20px 0 15px 0;
+    }
+    .security {
+        margin-bottom: 25px;
+    }
+    .gender {
+        .gender_subtitle {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+    }
+}

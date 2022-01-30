@@ -15,70 +15,30 @@ export const GlobalSvgSelector = ({ id }: Props) => {
 
         case "basket":
             return (
-                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="280px" height="280px" viewBox="0 0 280 280" enable-background="new 0 0 280 280" xmlSpace="preserve">  <image id="image0" width="290" height="290" x="0" y="0"
-                    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAQAAAD2e2DtAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
-                    AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZ
-                    cwAAB2IAAAdiATh6mdsAAAAHdElNRQfmARUJMTi34FiBAAAK80lEQVR42u2dbYxVVxWG3+EOo8Nc
-                    hg7omGgoTZrMUKDRtmrE2BbaoSEhQJM2TRpNU0ditLYGGg0/a41/NG2T2kaj9SOpqR81asSkiUIg
-                    SD8Si3aUaTozIpQOCh1kBpi5c7nzdf0xwVIod597z1p77XP2+5yfM9l7nXe9d+1197nnHIAQQggh
-                    hBBCCCGEEEIIIYQQQggheaPJOgCvtKML3ViJLixHEW3oQBuAEsYwgRKGMYgBDGEI56wD9UccBmjD
-                    WvSgBzdgQaL/P4I92IPdOGMdOEnLEmzDfkyj2sAxjX3oRbv1KZDGaMJG/AKTDaX+4mMSP8fGSCpl
-                    bliAzTiYOvUXH4dwH5qtT4skoYBeDIkm/8IxiPtRsD49Upub8BeV5F84XsNa61MkV6IDT2JWNf1V
-                    VDGHZ/FB61Mll7MZp9STf+EYwSbr0yUX04xvePjsv7sOPIkW69Mm86zAK16Tf+F4CcutT50AN+Ft
-                    k/RXUcVJ3GB9+rGzDmfN0l9FFeO4w1qCmLkTZdP0V1FFBfdYyxArd2PGPP1VVDGDu6yliJH1OG+e
-                    +neqwAZrORolqxc5bsS+Bq/TjeAA+jGAIYzhDCYAFHEVOtCNlViNWxrc5DmLdeizFiUeVjTU+b+K
-                    HVjjsHwTrsfDDV1IOsEvhb5YWPf3/nN4HKvqmmM1nsB4nbO8yOuFfnisrrSM4hEsbWieZXgUY3XN
-                    9W1raWJgE+YSJ2QOz6Iz1WxL67rANIet1vLknWV1XPI5jM+IzHkzjiSec6TBakMS8kziVPwOHWKz
-                    tuNXief9vrVEeWZtwnI8h68Jz9yEnQmXnll80lqmvFLA3xKlYBq9KvN/DlOJ5j/IH47p0JtI/ils
-                    VotgS0IL3GctVR4pYDBR8b9fNYrPJloI3kh4Awqpg3sTffak1/7L2ZkoDl4hFKYJ/0gg+6+9RPLb
-                    BJH0ZfYqS6BsTCD6YSzxEksHjiaIhj8UEeWXCVZ/mW2fJKxL0Ak8Zy1ZnmhPcI/fj71G9DNnPJOe
-                    6lEUbHPKPer5Zo0P4Ywzps9by5Yf9jvFfsR7TN9yxrTXWra8sNh5f/8EPuA9qmXO3wtMY7G1dG6y
-                    sGFxq/OHFj/Af71HdRo/cvxHM272HlXdZMEAtzn/46cmcbkMAKw3iSt39DlK7atmkb3miOyv1tLl
-                    gXbnJeAdZrF93RHZLIrW8rkIfwnodsa42yw218wL0GUWW0KyYIDajOB1s9j+7mw+XdGbE74BXJ+h
-                    A6iaxVbFAcd/0ACpWen4e79pdK7qQwOk5iOOvw+aRjfg+HvwdwuFbwDXbtqQaXSu2YPfCwzfAK5b
-                    QP3vAdYzOw2QGpeE46bRuWanAVLj2kqZMI0u8wYI/5drri951mcQenwOwq8ARBUaIHJogMihASKH
-                    BogcGiByaIDIoQEihwaIHBogcmiAyKEBIocGiBwaIHJogMihASKHBogcGiByaIDIoQEihwaIHBog
-                    cmiAyJH71fr16MUGrAj/mRgZZwLH8Cf8xPiu6EtowdOBvMY1lmMG30WLROokKsD7sSu7r07NMLux
-                    BefTDiLxcpMncK+1FlFyLYr4Y9pB0leA1TgU+v1vuaWKVc5HVDhI/y3gS0y/GU34ctoh0htgnbUK
-                    UXNL2gHSf3on0WqtQsSU0n7tTl8B7B7SRgRIb4BR61OImtTqpzfAMWsNoia1+ukN8Ja1BlGTWn0a
-                    INvQAJETgAHYA1jCHiByIqoA/diONSiiiDXYHtbVcMP4gvj4jalf/a7ggUusWsCDqJhflbeOb8w6
-                    9fO4XuqUXt73fm/Y7YFYwC6+PuvUz7NL+TQfuOLMD5kn3za+Xdapn+cp1ZM8VONHKwX0m6ffMr6n
-                    0idP4lfBwwqmeodnMHvFv816fmd4aPEJtIASBtD9HrCn5l/tXhkXQnyBGED3q0jt0e23oSzjExg9
-                    fAM0pfirDyzjC6QCnMCU4knWfu/W1Yozhx7fFE6mH0TCAHM4rniate84uENx5tDjG8Zc+kFk7g3U
-                    XOm21fya9QXFmUOPT2TplTGAZhewpsZPn7+CVYozhx5fENcB5nlUdbujgtvfc9YeTJlvA1nG902J
-                    1MlUAN2toBa8gIcuKbQFfBUvYKHqvKHHF1AF2ODhc9aPHf+/3PowXjf/3NvHJ3JDrsz31O60d6iR
-                    BuiWeG+yjAFaUQpgSyYuqmhDOf0wMj1A2fgVzjFySiL9cs8Ist+Tjw0hxaUMEFBHGglCirMCZJXA
-                    KoDuTgC5HCHFWQGySmAVgD2Ab9gDRI6Q4nLbNyUsMpIiRibRJjOQ3LOC2Qb6RGzJlTMAFwGfiKkt
-                    ZwC2gT4JsALQAD6hASInQAOwB/AJe4DIEVNbbh9gIcoiD58nbmbRimmZoeQqwLTEfSokESek0i/7
-                    0iguAr4QVFrSAGwDfSGoNCtAFgm0AtAAvqABIidQA7AH8AV7gMgRVFr2fp4zWOJZihg5J6my7Muj
-                    WQN88KbkYDRA9hBVWdYAbAN9IKqyrAH4u0AfiKrMCpA9Aq4A7AF8wB4gckRVlt0HKKAcyIOb8ss0
-                    Wms8n7xuZCvALP7tWY74OC6ZfmkDcBHQR1hhaQOwDdRGWGFWgKwRuAG4FaRN4AZgBdCGPUDkCCss
-                    /XzPRSh5kyJOirIKS1eAST4zVJVT0h8waQNwEdBFXF15A7AN1ERcXVaAbJGBCkADaEIDRE4GDMAe
-                    QBP2AJEjrq78i16aUEKrFzHio4w2VGWHlK8AVV4QUuMt6fRrGICLgB4KymoYgG2gFgrKahiAS4AW
-                    CsqyAmSJjFQA9gBasAeIHAVlNV742oKyirFiZw6tmJIeVCNRU3jbgxzxcVI+/ToG4CKgg4qqOgZg
-                    G6iBiqqsANkhQxWAW0EaqKjKCpAdMlQB2ANowB4gclRU1dgIAoCzaFeUIkbGdRTV2rFjGyiNUlXV
-                    MgAXAWkyZgC2gdIoKUoDZAUaIHIyZgD2ANKwB4gcJUW19gEKOI9mNTHiYwatmNEYWKsC8JmhshzX
-                    Sb+eAbgIyKKmpp4B2AZKoqYmK0A2yGAFoAEkoQEiJ4MGYA8giZqaWvsAQBHjamPHx2JM6AysVwEm
-                    MKo2dmyc1kq/pgG4CMihqKSmAdgGSqGoJCtAFshoBeDvAqVQVFLTAEcVx46LjFaAIcWx42JAb2i9
-                    fQDgfSihoDh+LMygiIrW4JoVoIJ/KY4eD4f10q9rAODPqqPHgqqKugbYpzp6LKiqqNkDAJ34D7uA
-                    lMziwxjRG163Aoxgr+r4MbBHM/3aBgCeUx4//ygrqLsEAEUcw1LlOfLMKK7WfRWndgWYwPeUZ8g3
-                    T2u/iVW7AgCdOIpF6rPkk0lcg1O6U+g/0nUEj6nPkVe+o51+HxUAaMUbWOFhnrwxjOv0X8Xt46HO
-                    ZWz3MEv+eNDHm9j9bNMMYDlu9DJTfvghHvcxjY8lAADacBArPc2VBwbwcR+ffz9LAACUsEm/ockN
-                    p7HFT/r9GQA4grs0L2vmiPO4E//0NZnPN3scwFaUPc6XTSq4By9aB6FHDyZQ5XHFo4Qe6xRp81Ec
-                    NZc51GMYn7BOjw86sddc6hCPvei0To0vmvBFLgXvOsrYGdub1rrwB3PZQzl2ocs6HTbchpfNxbc+
-                    XsZ66zTYshbPo2KeBoujgufxKWv5fW0F16YDW3E3bkXROhBPjGM/foPfY8w6kFAMME8zPoZPoxvX
-                    4hpchUVYbB2QIOMo4SzexGEM4hX0aT32kRBCCCGEEEIIIYQQQgghhBBCCCEE+B//zuYCKEn/+QAA
-                    ACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMi0wMS0yMVQwNjo0OTo1NiswMzowMFrWPVkAAAAldEVYdGRh
-                    dGU6bW9kaWZ5ADIwMjItMDEtMjFUMDY6NDk6NTYrMDM6MDAri4XlAAAAGXRFWHRTb2Z0d2FyZQB3
-                    d3cuaW5rc2NhcGUub3Jnm+48GgAAAABJRU5ErkJggg==" />
+                <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                width="128.000000pt" height="128.000000pt" viewBox="0 0 128.000000 128.000000"
+                preserveAspectRatio="xMidYMid meet">
+
+                <g transform="translate(0.000000,128.000000) scale(0.100000,-0.100000)"
+                fill="#000000" stroke="none">
+                <path d="M0 1215 l0 -64 66 -3 66 -3 113 -240 c101 -212 112 -242 101 -260
+                -88 -137 -106 -210 -65 -266 42 -59 41 -59 474 -59 l395 0 0 65 0 65 -375 0
+                c-293 0 -375 3 -375 13 0 6 13 35 28 62 l27 50 267 5 c251 5 269 6 287 25 24
+                24 271 469 271 487 0 8 -7 24 -16 36 l-15 22 -490 0 -490 0 -29 65 -29 65
+                -106 0 -105 0 0 -65z"/>
+                <path d="M355 252 c-112 -27 -129 -183 -25 -237 107 -55 225 71 164 175 -26
+                44 -92 74 -139 62z"/>
+                <path d="M995 252 c-112 -27 -129 -183 -25 -237 107 -55 225 71 164 175 -26
+                44 -92 74 -139 62z"/>
+                </g>
                 </svg>
+
 
             )
 
         case "profile":
-            return (
-
-                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="256px" height="256px" viewBox="0 0 256 256" enable-background="new 0 0 256 256" xmlSpace="preserve">  <image id="image0" width="256" height="256" x="0" y="0"
+            return ( 
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="256px" height="256px" viewBox="0 0 256 256" enableBackground="new 0 0 256 256" xmlSpace="preserve">  <image id="image0" width="256" height="256" x="0" y="0"
                     href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAQAAAD2e2DtAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
                     AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZ
                     cwAABuwAAAbsAR51ODUAAAAHdElNRQfmARUJMTi34FiBAAAPr0lEQVR42u2daXBX1RmHn0MiARNE
@@ -155,6 +115,26 @@ export const GlobalSvgSelector = ({ id }: Props) => {
                     RbQi/g8arIpd0XriyAAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMi0wMS0yMVQwNjo0OTo1NiswMzow
                     MFrWPVkAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjItMDEtMjFUMDY6NDk6NTYrMDM6MDAri4XlAAAA
                     GXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAABJRU5ErkJggg==" />
+                </svg>
+            )
+
+        case "orders":
+            return (
+                <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                    width="128.000000pt" height="128.000000pt" viewBox="0 0 128.000000 128.000000"
+                    preserveAspectRatio="xMidYMid meet">
+
+                    <g transform="translate(0.000000,128.000000) scale(0.100000,-0.100000)"
+                        fill="#000000" stroke="none">
+                        <path d="M292 1263 c-17 -15 -119 -182 -171 -280 l-12 -23 246 0 245 0 0 160
+                        0 160 -144 0 c-122 0 -147 -3 -164 -17z"/>
+                        <path d="M680 1120 l0 -160 245 0 246 0 -12 23 c-52 98 -154 265 -171 280 -17
+                        14 -42 17 -164 17 l-144 0 0 -160z"/>
+                        <path d="M80 490 c0 -437 3 -460 55 -480 35 -13 975 -13 1010 0 52 20 55 43
+                        55 480 l0 400 -560 0 -560 0 0 -400z m740 92 c0 -21 -209 -232 -230 -232 -9 0
+                        -42 27 -75 60 -50 50 -58 63 -49 78 19 30 44 26 85 -14 l39 -38 94 93 c84 82
+                        97 91 115 81 12 -6 21 -18 21 -28z"/>
+                    </g>
                 </svg>
             )
 

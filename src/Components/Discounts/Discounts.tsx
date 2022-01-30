@@ -1,4 +1,3 @@
-import React, { ReactElement } from 'react'
 import s from './Discounts.module.scss';
 
 interface DiscountItem {
@@ -12,7 +11,6 @@ interface Props {
 } 
 
 const Discounts: React.FC<Props> = ({ discounts }) => {
-    debugger
     return (
         <div className={s.discounts}>
             {discounts.map(item => {
@@ -26,6 +24,6 @@ const Discounts: React.FC<Props> = ({ discounts }) => {
             })}
         </div>
     )
-}
+} 
 
 export default Discounts;

@@ -1,0 +1,29 @@
+@import "./../../mixins.scss";
+@import "./../../variables.scss";
+
+.text_input {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    label {
+        margin-bottom: 4px;
+        font-size: 14px;
+        color: #000000e1;
+    }
+    @include defaultTextInput;
+    p {
+        font-size: 14px;
+        color: red;
+        text-align: end;
+        &::after {
+            content: "*";
+        }
+    }
+}
+
+.required {
+    &:after {
+        content: "*";
+        color: red;
+    }
+}

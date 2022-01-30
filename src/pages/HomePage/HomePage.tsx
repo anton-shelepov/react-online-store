@@ -1,18 +1,15 @@
 import { connect } from 'react-redux'
 import Discounts from '../../Components/Discounts/Discounts'
-import SimpleSlider from '../../Components/Slider/Slider'
-import { IRootState } from '../../Redux/Store/store'
+import MainSlider from '../../Components/Slider/Slider'
+import { IRootState } from '../../Redux/store'
 import s from './HomePage.module.scss'
+import { IHomeState } from './../../Types/homeTypes' 
 
 
-interface Props {   
-    
-}
-
-const HomePage: React.FC<any> = (props) => {
+const HomePage: React.FC<IHomeState> = (props) => {
     return (
         <div className={s.home}>
-            <SimpleSlider /> 
+            <MainSlider /> 
             <Discounts discounts={props.discounts} />
         </div>
     )

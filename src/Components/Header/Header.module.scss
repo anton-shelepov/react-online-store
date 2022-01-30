@@ -1,4 +1,4 @@
-@import "./../../Common/variables.scss";
+@import "./../../Components/_Common/variables.scss";
 
 .header {
     z-index: 1000;
@@ -20,33 +20,31 @@
         align-items: center;
         justify-content: space-between;
         .logo {
+            margin-right: 18px;
             svg {
                 height: 75px;
                 width: 250px;
             }
-        }
-        .info {
-            .block_bottom {
-                .nav {
-                    .item { 
-                        margin-left: 20px;
-                        display: inline-flex; 
-                        flex-direction: column;
-                        align-items: center;
-                        svg {
-                            margin-bottom: 2px;
-                            filter: invert(1);
-                            width: 25px;
-                            height: 25px;
-                        }
-                    }
-                    
+        } 
+        .nav {
+            white-space: nowrap;
+            .item {
+                margin-left: 18px;
+                display: inline-flex;
+                flex-direction: column;
+                align-items: center;
+                flex-wrap: nowrap;
+                svg {
+                    margin-bottom: 5px;
+                    filter: invert(1);
+                    width: 25px;
+                    height: 25px;
                 }
             }
         }
 
-        input {
-            // TODO: ВЫНЕСТИ В КОМПОНЕНТ INPUT
+        input { 
+            box-sizing: content-box;
             width: 50%;
             height: 40px;
             border-radius: 30px;

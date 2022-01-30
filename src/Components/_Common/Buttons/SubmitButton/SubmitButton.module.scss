@@ -1,0 +1,21 @@
+@import "./../../variables.scss";
+
+.submit_btn { 
+    font-family: "Montserrat";
+    height: 40px;
+    border-radius: 25px;
+    background: linear-gradient(to right, #cb115f 0, #3e7692 100%) no-repeat;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer; 
+    @include button-box-shadow;
+    transition: all 0.5s;
+    &:hover { 
+        transition: all 0.5s;
+        color: rgb(245, 245, 245); 
+        font-size: 16px;
+        @include button-box-shadow-hover;
+    }
+}
