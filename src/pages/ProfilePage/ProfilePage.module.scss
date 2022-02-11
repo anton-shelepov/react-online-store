@@ -5,4 +5,7 @@
     @include defaultContentBlockParams;
     display: flex;
     justify-content: space-between;
+    .block_left {
+        flex-grow: 1;
+    }
 }

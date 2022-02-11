@@ -1,4 +1,4 @@
-@import "./../../variables.scss";
+@import "./../../variables.scss"; 
 
 .submit_btn { 
     font-family: "Montserrat";
@@ -15,6 +15,7 @@
     &:hover { 
         transition: all 0.5s;
         color: rgb(245, 245, 245); 
+        filter: brightness(0.95);
         font-size: 16px;
         @include button-box-shadow-hover;
     }

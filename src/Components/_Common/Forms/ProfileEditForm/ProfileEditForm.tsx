@@ -1,21 +1,23 @@
 import s from './ProfileEditForm.module.scss';
-import { useForm } from 'react-hook-form';
-import SubmitButton from '../../Buttons/SubmitButton/SubmitButton';
+import { Controller, useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 import RadioInput from '../../Inputs/RadioInput/RadioInput';
-import TextInput from '../../Inputs/TextInput/TextInput'; 
+import TextInput from '../../Inputs/TextInput/TextInput';
+import SubmitButton from '../../Buttons/SubmitButton/SubmitButton';
 import { profileEditSchema } from './../FormsSchemas';
-import { yupResolver }  from '@hookform/resolvers/yup';
+import NumberFormat from 'react-number-format';
+import TextInputMask from '../../Inputs/TextInput/TextInputMask';
 
 export interface IProfileEdit {
-    full_name: string;
+    fullName: string;
     email: string;
-    country: string;
+    address: string;
     phone: string;
     gender: string;
-    old_password: string;
-    new_password: string;
-    confirm_password: string; 
-} 
+    oldPassword: string;
+    newPassword: string;
+    confirmPassword: string;
+}
 
 const ProfileEditForm: React.FC = () => {
 
@@ -24,6 +26,7 @@ const ProfileEditForm: React.FC = () => {
         formState: { errors },
         handleSubmit,
         reset,
+        control,
     } = useForm<IProfileEdit>({
         resolver: yupResolver(profileEditSchema),
         mode: "onBlur",
@@ -31,8 +34,17 @@ const ProfileEditForm: React.FC = () => {
 
     const onSubmit = handleSubmit((data) => {
         console.log(data)
-        reset();
-    }) 
+        reset({
+            fullName: '',
+            email: '',
+            address: '',
+            phone: '',
+            gender: '',
+            oldPassword: '',
+            newPassword: '',
+            confirmPassword: '',
+        });
+    })
 
     return (
         <form className={s.profile_edit} onSubmit={onSubmit}>
@@ -40,9 +52,15 @@ const ProfileEditForm: React.FC = () => {
             <div className={s.personal}>
                 <h3 className={s.subtitle}>Личное</h3>
                 <TextInput register={register} errors={errors} name="email" label="Почта" required />
-                <TextInput register={register} errors={errors} name="full_name" label="Полное имя" />
-                <TextInput register={register} name="country" label="Страна" />
-                <TextInput register={register} name="phone" label="Телефон" />
+                <TextInput register={register} errors={errors} name="fullName" label="Полное имя" />
+                <TextInput register={register} name="address" label="Адрес" />
+                <Controller
+                    render={({ field }) => (
+                        <NumberFormat customInput={TextInputMask} label="Телефон" format="+7 (###) ###-##-##" mask="_" {...field} />
+                    )}
+                    name="phone"
+                    control={control}
+                />
                 <div className={s.gender}>
                     <span className={s.gender_subtitle}>Пол</span>
                     <div className={s.gender_radios}>
@@ -53,9 +71,9 @@ const ProfileEditForm: React.FC = () => {
             </div>
             <div className={s.security}>
                 <h3 className={s.subtitle}>Безопасность</h3>
-                <TextInput register={register} errors={errors} name="old_password" label="Старый пароль" type="password" />
-                <TextInput register={register} errors={errors} name="new_password" label="Новый пароль" type="password" />
-                <TextInput register={register} errors={errors} name="confirm_password" label="Подтвердите новый пароль" type="password" />
+                <TextInput register={register} errors={errors} name="oldPassword" label="Старый пароль" type="password" />
+                <TextInput register={register} errors={errors} name="newPassword" label="Новый пароль" type="password" />
+                <TextInput register={register} errors={errors} name="confirmPassword" label="Подтвердите новый пароль" type="password" />
             </div>
             <SubmitButton value="Сохранить изменения" />
         </form>

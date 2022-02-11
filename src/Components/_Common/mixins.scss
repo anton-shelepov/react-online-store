@@ -16,15 +16,12 @@
         margin: 3px;
         outline: none;
         @include input-box-shadow;
-        border: double 1.5px transparent;
-        background-image: linear-gradient(white, white), linear-gradient(to right, #cb115f 0, #3e7692 100%);
-        background-origin: border-box;
-        background-clip: padding-box, border-box;
+        @include gradientBorder(1.5px);
         transition: all 0.2s;
         &:focus {
             transition: all 0.2s;
             @include input-box-shadow-focus;
-        } 
+        }
     }
 }
 
@@ -33,6 +30,7 @@
     label {
         display: flex;
         align-items: center;
+        cursor: pointer;
         input[type="radio"] {
             cursor: pointer;
             margin-right: 8px;
@@ -48,10 +46,7 @@
             display: grid;
             place-content: center;
             padding: 0;
-            border: double 1.5px transparent;
-            background-image: linear-gradient(white, white), linear-gradient(to right, #cb115f 0, #3e7692 100%);
-            background-origin: border-box;
-            background-clip: padding-box, border-box;
+            @include gradientBorder(1.5px);
             &:before {
                 content: "";
                 width: 12px;
@@ -68,4 +63,12 @@
             }
         }
     }
+}
+
+//Custom border
+@mixin gradientBorder($borderSize) {
+    border: double $borderSize transparent;
+    background-image: linear-gradient(white, white), linear-gradient(to right, #cb115f 0, #3e7692 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
 }

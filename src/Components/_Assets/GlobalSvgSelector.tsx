@@ -16,28 +16,28 @@ export const GlobalSvgSelector = ({ id }: Props) => {
         case "basket":
             return (
                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-                width="128.000000pt" height="128.000000pt" viewBox="0 0 128.000000 128.000000"
-                preserveAspectRatio="xMidYMid meet">
+                    width="128.000000pt" height="128.000000pt" viewBox="0 0 128.000000 128.000000"
+                    preserveAspectRatio="xMidYMid meet">
 
-                <g transform="translate(0.000000,128.000000) scale(0.100000,-0.100000)"
-                fill="#000000" stroke="none">
-                <path d="M0 1215 l0 -64 66 -3 66 -3 113 -240 c101 -212 112 -242 101 -260
+                    <g transform="translate(0.000000,128.000000) scale(0.100000,-0.100000)"
+                        fill="#000000" stroke="none">
+                        <path d="M0 1215 l0 -64 66 -3 66 -3 113 -240 c101 -212 112 -242 101 -260
                 -88 -137 -106 -210 -65 -266 42 -59 41 -59 474 -59 l395 0 0 65 0 65 -375 0
                 c-293 0 -375 3 -375 13 0 6 13 35 28 62 l27 50 267 5 c251 5 269 6 287 25 24
                 24 271 469 271 487 0 8 -7 24 -16 36 l-15 22 -490 0 -490 0 -29 65 -29 65
                 -106 0 -105 0 0 -65z"/>
-                <path d="M355 252 c-112 -27 -129 -183 -25 -237 107 -55 225 71 164 175 -26
+                        <path d="M355 252 c-112 -27 -129 -183 -25 -237 107 -55 225 71 164 175 -26
                 44 -92 74 -139 62z"/>
-                <path d="M995 252 c-112 -27 -129 -183 -25 -237 107 -55 225 71 164 175 -26
+                        <path d="M995 252 c-112 -27 -129 -183 -25 -237 107 -55 225 71 164 175 -26
                 44 -92 74 -139 62z"/>
-                </g>
+                    </g>
                 </svg>
 
 
             )
 
         case "profile":
-            return ( 
+            return (
                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="256px" height="256px" viewBox="0 0 256 256" enableBackground="new 0 0 256 256" xmlSpace="preserve">  <image id="image0" width="256" height="256" x="0" y="0"
                     href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAQAAAD2e2DtAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
                     AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZ
@@ -136,6 +136,32 @@ export const GlobalSvgSelector = ({ id }: Props) => {
                         97 91 115 81 12 -6 21 -18 21 -28z"/>
                     </g>
                 </svg>
+            )
+
+        case "photo":
+            return (
+                <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                    width="128.000000pt" height="128.000000pt" viewBox="0 0 128.000000 128.000000"
+                    preserveAspectRatio="xMidYMid meet">
+
+                    <g transform="translate(0.000000,128.000000) scale(0.100000,-0.100000)"
+                        fill="#000000" stroke="none">
+                        <path d="M1030 1210 c-16 -16 -20 -33 -20 -80 l0 -60 -60 0 c-47 0 -64 -4 -80
+                        -20 -24 -24 -25 -38 -4 -68 13 -19 24 -22 80 -22 l64 0 0 -58 c0 -66 19 -102
+                        54 -102 39 0 56 30 56 98 l0 62 63 0 c69 0 97 17 97 58 0 33 -37 52 -102 52
+                        l-58 0 0 64 c0 56 -3 67 -22 80 -30 21 -44 20 -68 -4z"/> <path d="M447 1056 c-20 -8 -57 -32 -82 -55 -44 -40 -46 -41 -117 -41 -87 0
+                        -140 -25 -172 -80 -20 -33 -21 -53 -24 -335 -3 -296 -2 -301 20 -345 13 -25
+                        38 -55 57 -67 34 -23 35 -23 456 -23 421 0 422 0 455 22 74 51 75 55 78 302 3
+                        243 1 256 -53 256 -49 0 -55 -27 -55 -247 0 -197 -1 -202 -22 -217 -34 -24
+                        -772 -24 -806 0 -22 15 -22 17 -22 304 0 333 -4 320 88 320 83 0 126 16 183
+                        66 l50 44 119 0 c112 0 120 1 134 22 21 30 20 44 -4 68 -18 18 -33 20 -132 20
+                        -68 -1 -128 -6 -151 -14z"/> <path d="M496 784 c-98 -30 -176 -143 -176 -254 0 -96 70 -200 161 -240 42
+                        -17 66 -21 118 -18 77 5 125 25 174 75 50 49 70 97 75 174 5 85 -23 154 -85
+                        209 -76 66 -166 85 -267 54z m164 -109 c63 -33 99 -115 80 -184 -14 -52 -75
+                        -107 -129 -116 -54 -9 -126 25 -159 75 -30 45 -28 130 6 177 41 58 138 81 202
+                        48z"/>
+                    </g>
+                </svg> 
             )
 
         default:

@@ -1,0 +1,73 @@
+@import "./../_Common/variables.scss";
+@import "./../_Common/mixins.scss";
+
+.profile_info {
+    @include card-box-shadow;
+    border-radius: $card-border-radius;
+    padding: $large-padding;
+
+    margin-right: 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    .profile_photo {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%; 
+        @include gradientBorder(2px);
+        margin: 0 auto;
+        cursor: pointer; 
+        img,
+        .overlay {
+            position: absolute;
+            top: 0px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+        }
+        .overlay {
+            transition: all 0.3s ease-in-out;
+            background-color: rgba(0, 0, 0, 0);
+            svg {
+                opacity: 0;
+                width: 35%;
+                filter: invert(1);
+                z-index: 2;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                text-align: center;
+                transition: all 0.3s ease-in;
+            }
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.342);
+                transition: all 0.3s ease-in;
+                svg {
+                    transition: all 0.3s ease-in;
+                    opacity: 1;
+                }
+            }
+        } 
+    }
+
+    .user_email {
+        font-size: 23px;
+        margin: 30px auto;
+    }
+
+    .info_item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
