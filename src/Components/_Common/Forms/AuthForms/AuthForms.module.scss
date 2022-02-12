@@ -1,0 +1,46 @@
+@import "./../../../../Components/_Common/variables.scss";
+@import "./../../../../Components/_Common/mixins.scss";
+
+.login,
+.registration {
+    @include defaultContentBlockParams;
+
+    margin: 0 auto;
+    max-width: 450px;
+    width: 100%;
+    height: max-content;
+
+    .page_title {
+        margin-bottom: 25px;
+    }
+    .buttons {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        align-items: center;
+        input[type="submit"] {
+            width: 45%;
+            margin-left: 18px;
+        }
+        .change_form {
+            cursor: pointer;
+            color: rgb(77, 77, 77);
+            transition: all 0.3s;
+            &:hover {
+                transition: all 0.3s;
+                color: rgb(136, 136, 136);
+                font-size: 16.3px;
+            }
+        }
+    }
+}
+
+.registration {
+    .buttons {
+        input[type="submit"] {
+            width: 70%;
+            margin-left: 18px;
+        }
+    }
+}

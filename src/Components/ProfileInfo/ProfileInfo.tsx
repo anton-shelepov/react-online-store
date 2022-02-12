@@ -2,7 +2,7 @@ import s from './ProfileInfo.module.scss';
 import profile_photo_placeholder from './../../Images/ProfileImages/profile_photo_placeholder.jpg';
 import { GlobalSvgSelector } from '../_Assets/GlobalSvgSelector';
 
-let link = ''
+let link = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF7Uu-WifiJwJwV8qAzPGYtgkZbt5VoJcusw&usqp=CAU'
 
 const ProfileInfo: React.FC = () => {
     return (

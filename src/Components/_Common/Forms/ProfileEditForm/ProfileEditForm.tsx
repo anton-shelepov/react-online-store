@@ -19,8 +19,7 @@ export interface IProfileEdit {
     confirmPassword: string;
 }
 
-const ProfileEditForm: React.FC = () => {
-
+const ProfileEditForm: React.FC = () => { 
     const {
         register,
         formState: { errors },
@@ -52,11 +51,11 @@ const ProfileEditForm: React.FC = () => {
             <div className={s.personal}>
                 <h3 className={s.subtitle}>Личное</h3>
                 <TextInput register={register} errors={errors} name="email" label="Почта" required />
-                <TextInput register={register} errors={errors} name="fullName" label="Полное имя" />
+                <TextInput register={register} errors={errors} name="fullName" label="Полное имя (ФИО)" />
                 <TextInput register={register} name="address" label="Адрес" />
                 <Controller
                     render={({ field }) => (
-                        <NumberFormat customInput={TextInputMask} label="Телефон" format="+7 (###) ###-##-##" mask="_" {...field} />
+                        <NumberFormat customInput={TextInputMask} errors={errors} label="Телефон" format="+7 (###) ###-##-##" mask="_" {...field} />
                     )}
                     name="phone"
                     control={control}

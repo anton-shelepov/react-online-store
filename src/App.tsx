@@ -4,6 +4,7 @@ import Header from "./Components/Header/Header";
 import HomePage from "./Pages/HomePage/HomePage";
 import s from "./App.module.scss"
 import ProfilePage from "./Pages/ProfilePage/ProfilePage";
+import AuthPage from "./Pages/AuthPage/AuthPage";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
                 <Catalog />
                 <Routes>
                     <Route path='/' element={<HomePage />} />
+                    <Route path='/auth' element={<AuthPage />} />
                     <Route path='/profile' element={<ProfilePage />} /> 
                 </Routes>
             </div>

@@ -2,13 +2,14 @@
 
 .submit_btn { 
     font-family: "Montserrat";
-    height: 40px;
+    width: 100%;
+    height: 46px;
     border-radius: 25px;
     background: linear-gradient(to right, #cb115f 0, #3e7692 100%) no-repeat;
     border: none;
     color: #fff;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 600; 
     cursor: pointer; 
     @include button-box-shadow;
     transition: all 0.5s;

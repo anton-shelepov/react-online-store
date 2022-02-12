@@ -1,7 +1,6 @@
 
 import { requiredInput, correctEmail, passwordsMustMatch, maxLengthPassword, minLengthPassword, nameMustBeCorrect } from './ValidationMessages';
 import * as yup from 'yup';
-import { StringSchema } from 'yup';
 
 
 export const profileEditSchema = yup.object().shape({
@@ -14,9 +13,19 @@ export const profileEditSchema = yup.object().shape({
         .string()
         .nullable()
         .transform((value, originalValue) => (originalValue === '' ? null : value))
-        .matches(/^[A-Za-zА-Яа-я](?! )(?!(?:.* ){3}).+$/, nameMustBeCorrect),
+        .matches(/^[а-яa-zА-ЯA-Z-]{0,}\s[а-яa-zА-ЯA-Z-]{1,}(\s[а-яa-zА-ЯA-Z-]{1,})?$/, nameMustBeCorrect),
     address: yup.string(),
-    phone: yup.string(),
+    phone: yup.string().test(
+        'phone-is-valid',
+        function (value, { createError, path }) { 
+            return (value?.charAt(value.length - 1)) === '_'
+                ? createError({
+                    message: 'Введите корректный телефон',
+                    path,
+                })
+                : true
+        }
+    ),
     oldPassword: yup
         .string()
         .nullable()
@@ -32,10 +41,58 @@ export const profileEditSchema = yup.object().shape({
     confirmPassword: yup
         .string()
         .nullable()
-        .transform((value, originalValue) => (originalValue === '' ? null : value)) 
+        .transform((value, originalValue) => (originalValue === '' ? null : value))
         .oneOf([yup.ref("newPassword")], passwordsMustMatch),
 })
 
+
+export const loginSchema = yup.object().shape({
+    email: yup
+        .string()
+        .email(correctEmail)
+        .trim()
+        .required(requiredInput),
+
+    password: yup
+        .string()
+        .required(requiredInput)
+        .min(8, minLengthPassword(8))
+        .max(20, maxLengthPassword(20))
+})
+
+
+export const registrationSchema = yup.object().shape({
+    email: yup
+        .string()
+        .email(correctEmail)
+        .trim()
+        .required(requiredInput),
+    fullName: yup
+        .string()
+        .nullable()
+        .transform((value, originalValue) => (originalValue === '' ? null : value))
+        .matches(/^[а-яa-zА-ЯA-Z-]{0,}\s[а-яa-zА-ЯA-Z-]{1,}(\s[а-яa-zА-ЯA-Z-]{1,})?$/, nameMustBeCorrect),
+    phone: yup.string().test(
+        'phone-is-valid',
+        function (value, { createError, path }) { 
+            return (value?.charAt(value.length - 1)) === '_'
+                ? createError({
+                    message: 'Введите корректный телефон',
+                    path,
+                })
+                : true
+        }
+    ),
+    password: yup
+        .string()
+        .required(requiredInput)
+        .min(8, minLengthPassword(8))
+        .max(20, maxLengthPassword(20)),
+    confirmPassword: yup
+        .string()
+        .required(requiredInput)
+        .oneOf([yup.ref("password")], passwordsMustMatch),
+})
 
 
 
