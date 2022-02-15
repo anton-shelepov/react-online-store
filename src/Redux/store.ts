@@ -1,17 +1,19 @@
-import { combineReducers, createStore } from "redux" 
-import { IHomeState } from "../Types/homeTypes";
-import homeReducer from "./Reducers/homeReducer"
+import { configureStore } from "@reduxjs/toolkit";
+import authReducer from "./Reducers/authReducer";
+import catalogReducer from "./Reducers/catalogReducer";
+import homeReducer from "./Reducers/homeReducer";
 
-export interface IRootState {
-    home: IHomeState;
+const store = configureStore({
+    reducer: {
+        home: homeReducer,
+        catalog: catalogReducer,
+        auth: authReducer,
+    }
 }
+)
 
-const rootReducer = combineReducers({
-    home: homeReducer
-})
+export type RootState = ReturnType<typeof store.getState>
 
-const store = createStore<IRootState, any, any, any>(
-    rootReducer
-) 
+export type AppDispatch = typeof store.dispatch
 
 export default store;

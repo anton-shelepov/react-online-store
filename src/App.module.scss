@@ -3,9 +3,8 @@
 .app { 
     .container { 
         margin: 100px auto 0 auto;
-        max-width: $container;
+        max-width: $container; 
         padding: 15px 5px; 
         display: flex; 
-        justify-content: space-between;
     }
 }

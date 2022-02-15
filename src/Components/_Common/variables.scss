@@ -1,11 +1,11 @@
 //Container params
-$container: 1450px;
-$catalog-width: calc(($container / 100) * 24);
-$content-width: calc(($container / 100) * 74.5);
+$container: 1450px; 
+$sidebarWidth: 300px;
+$contentWidth: $container - $sidebarWidth;
 
 $card-border-radius: 25px;
 
-$large-padding: 25px;
+$large-padding: 25px; 
 
 //Box shadows inputs
 @mixin input-box-shadow {
@@ -48,4 +48,10 @@ box-shadow: 4px 3px 10px 1px rgba(34, 60, 80, 0.3);
     -webkit-box-shadow: 0px 0px 38px -11px rgba(34, 60, 80, 0.1);
     -moz-box-shadow: 0px 0px 38px -11px rgba(34, 60, 80, 0.1);
     box-shadow: 0px 0px 38px -11px rgba(34, 60, 80, 0.1);
+}
+
+@mixin card-box-shadow-hover {
+    -webkit-box-shadow: 3px 5px 15px -3px rgba(0, 0, 0, 0.28);
+-moz-box-shadow: 3px 5px 15px -3px rgba(0, 0, 0, 0.28);
+box-shadow: 3px 5px 15px -3px rgba(0, 0, 0, 0.28);
 }

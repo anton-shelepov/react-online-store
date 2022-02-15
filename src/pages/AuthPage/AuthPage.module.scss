@@ -1,0 +1,14 @@
+@import './../../Components/_Common/variables.scss';
+@import './../../Components/_Common/mixins.scss';
+
+
+.loginPage {
+    margin: 0 auto;
+    width: 100%;
+    @include defaultContentBlockParams;
+
+    margin: 0 auto;
+    max-width: 450px;
+    width: 100%;
+    height: max-content;
+}

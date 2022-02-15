@@ -1,10 +1,15 @@
-@mixin defaultContentBlockParams {
-    max-width: $content-width;
+@mixin defaultContentBlockParams { 
+    max-width: $container;
     width: 100%;
     background-color: white;
+    flex-grow: 1;
     @include block-box-shadow;
     padding: 25px;
     border-radius: 15px;
+}
+
+@mixin pageTitle {
+    margin-bottom: 35px;
 }
 
 // Inputs

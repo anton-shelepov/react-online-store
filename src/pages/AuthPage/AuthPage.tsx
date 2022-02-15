@@ -13,14 +13,14 @@ const AuthPage: React.FC = (props: IAuthPage) => {
     const [form, setForm] = useState('login');
 
     return (
-        <>
+        <div className={s.loginPage}>
             {
             form === 'login' 
             ? <LoginForm setForm={setForm} /> 
             : <RegistrationForm setForm={setForm} />
             } 
-        </>
+        </div>
     )
 }
 
-export default AuthPage;
+export default AuthPage; 

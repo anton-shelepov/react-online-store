@@ -22,7 +22,7 @@ const initialState: IHomeState = {
             description: "Зимняя распродажа производителя",
             discountSize: "Скидки до 50%",
         },
-    ]
+    ], 
 } 
 
 

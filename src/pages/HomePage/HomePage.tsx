@@ -1,9 +1,10 @@
 import { connect } from 'react-redux'
 import Discounts from '../../Components/Discounts/Discounts'
 import MainSlider from '../../Components/Slider/Slider'
-import { IRootState } from '../../Redux/store'
+import { RootState } from '../../Redux/store'
 import s from './HomePage.module.scss'
-import { IHomeState } from './../../Types/homeTypes' 
+import ViewedProducts from '../../Components/ViewedProducts/ViewedProducts'
+import { IHomeState } from '../../Types/homeTypes'
 
 
 const HomePage: React.FC<IHomeState> = (props) => {
@@ -11,11 +12,12 @@ const HomePage: React.FC<IHomeState> = (props) => {
         <div className={s.home}>
             <MainSlider /> 
             <Discounts discounts={props.discounts} />
+            <ViewedProducts />
         </div>
     )
 }
 
-const mapStateToProps = (state: IRootState) => {
+const mapStateToProps = (state: RootState) => {
     return {
         discounts: state.home.discounts
     }

@@ -1,11 +1,12 @@
 @import './../../Components/_Common/variables.scss';
 
 .catalog { 
-    min-width: $catalog-width;
+    max-width: $sidebarWidth;
+    min-width: $sidebarWidth;
     background-color: white;
     padding: 25px;
     border-radius: 15px; 
-    margin-right: 3px;
+    margin-right: 10px;
     @include block-box-shadow;
     .categories_list {
         line-height: 1.8;

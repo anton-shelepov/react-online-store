@@ -1,0 +1,32 @@
+@import './../_Common/mixins.scss';
+@import './../_Common/variables.scss';
+
+.catalog_item {
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+
+    @include card-box-shadow;
+    @include gradientBorder(1.9px);
+    border-radius: $card-border-radius;
+    padding: 35px;
+    margin: 10px;
+    transition: all 0.3s; 
+    font-size: 18px;
+
+    img {
+        width: 253.5px;
+        height: 190px;
+    }
+
+    .item_name {
+        margin: 20px 0 10px 0;
+    }
+
+    &:hover {
+        transition: all 0.3s;
+        transform: scale(1.03);
+        @include card-box-shadow-hover; 
+        filter: brightness(0.98)
+    }
+}

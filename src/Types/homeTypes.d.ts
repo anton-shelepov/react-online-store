@@ -12,6 +12,10 @@ export type Discount = {
     discountSize: string,
 } 
 
+export type ViewedProducts = {
+    
+}
+
 export type PopularProducts = {
     
 }

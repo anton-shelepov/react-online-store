@@ -1,0 +1,13 @@
+@import "./../../Components/_Common/variables.scss";
+@import "./../../Components/_Common/mixins.scss";
+
+.catalog_page {
+    @include defaultContentBlockParams; 
+    .page_title {
+        @include pageTitle;
+    }
+    .catalog_items { 
+        display: flex; 
+        flex-wrap: wrap;
+    }
+}

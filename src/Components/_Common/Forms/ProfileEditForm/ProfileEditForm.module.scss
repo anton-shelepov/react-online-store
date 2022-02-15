@@ -7,8 +7,7 @@
     white-space: unset;
     @include card-box-shadow;
     padding: 25px;
-    border-radius: $card-border-radius;
-  
+    border-radius: $card-border-radius; 
 
     .title {
         font-weight: 600;

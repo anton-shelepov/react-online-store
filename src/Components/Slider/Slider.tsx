@@ -8,6 +8,7 @@ export default function MainSlider() {
         dots: true,
         infinite: true,
         speed: 500,
+        centerMode: true,
         autoplay: true,
         autoplaySpeed: 6000, 
         slidesToShow: 1,
