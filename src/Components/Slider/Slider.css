@@ -1,0 +1,12 @@
+.slick-slide img { 
+    width: 100%; 
+    border-radius: 40px;
+} 
+
+.slide-content {
+    outline: none;
+}
+
+.slick-dots {
+    bottom: -30px;
+}

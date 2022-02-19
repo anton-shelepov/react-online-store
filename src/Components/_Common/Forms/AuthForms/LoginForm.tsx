@@ -5,8 +5,8 @@ import TextInput from '../../Inputs/TextInput/TextInput';
 import { loginSchema } from '../FormsSchemas';
 import SubmitButton from '../../Buttons/SubmitButton/SubmitButton';
 import { Dispatch, SetStateAction } from 'react';
-import { useAppDispatch } from '../../../../Hooks/hooks';
 import { setUserAuth } from '../../../../Redux/Actions/AuthActions/authActionsCreators';
+import { useAppDispatch } from '../../../../Utils/Hooks/hooks';
 
 export interface ILoginForm {
     

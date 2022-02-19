@@ -1,6 +1,19 @@
 @import "./../../Components/_Common/variables.scss";
 @import "./../../Components/_Common/mixins.scss";
 
-.home {
-    @include defaultContentBlockParams;
+.home {  
+    max-width: $contentWidth;
+    width: calc(100% - $sidebarWidth);
+    background-color: white; 
+    @include block-box-shadow;
+    padding: 25px;
+    border-radius: 15px;
+
+    @media screen and (max-width: $medium-width) {
+        max-width: $container;
+        width: 100%; 
+    } 
+    @media screen and (max-width: $small-width) { 
+        padding: $large-padding $small-padding; 
+    } 
 }

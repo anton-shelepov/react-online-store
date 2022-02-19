@@ -1,0 +1,21 @@
+@import "./../_Common/variables.scss";
+
+.catalog_burger_menu {
+    position: fixed;
+    top: 0;
+    left: 0; 
+
+    svg {
+        filter: invert(1);
+        max-width: 45px;
+        max-height: 100px; 
+
+        @media screen and (max-width: $small-width) {
+            max-height: 80px;
+        }
+    }
+
+    @media screen and (min-width: $medium-width) {
+        display: none;
+    }
+}

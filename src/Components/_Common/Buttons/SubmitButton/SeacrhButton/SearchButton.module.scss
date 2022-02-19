@@ -1,0 +1,18 @@
+.search_button { 
+
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 16px;
+    padding: 0;
+    color: white;
+
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    svg {
+        width: 45px;
+        height: 45px;
+        filter: invert(1);
+    } 
+}

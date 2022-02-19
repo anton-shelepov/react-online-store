@@ -1,14 +1,24 @@
 @import './../../Components/_Common/variables.scss';
 
 .catalog { 
-    max-width: $sidebarWidth;
-    min-width: $sidebarWidth;
+    width: $sidebarWidth; 
+    white-space: nowrap;
     background-color: white;
     padding: 25px;
     border-radius: 15px; 
-    margin-right: 10px;
+    margin-right: 10px; 
+
     @include block-box-shadow;
+
     .categories_list {
         line-height: 1.8;
+        li {
+            list-style-type: none;
+        }
+    } 
+
+    @media screen and (max-width: $medium-width) {
+        border-radius: 0 15px 15px 0;
+        height: 100%;
     }
 }

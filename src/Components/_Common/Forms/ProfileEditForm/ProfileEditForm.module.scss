@@ -1,7 +1,8 @@
 @import "./../../../../Components/_Common/variables.scss";
 @import "./../../../../Components/_Common/mixins.scss";
 
-.profile_edit {
+.profile_edit { 
+
     display: flex;
     flex-direction: column;
     white-space: unset;
@@ -25,4 +26,17 @@
             font-size: 14px;
         }
     }
+
+    
+    @media screen and (max-width: $large-width) { 
+        input, p{
+            max-width: 60%;
+        }
+    } 
+    @media screen and (max-width: $small-width) { 
+        padding: $large-padding $small-padding;
+        input, p {
+            max-width: 100%;
+        }
+    } 
 }

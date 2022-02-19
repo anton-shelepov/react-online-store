@@ -8,9 +8,7 @@
     width: 100%;
     top: 0;
     left: 0;
-    a {
-        color: white;
-    }
+
     .container {
         padding: 0 16px;
         max-width: $container;
@@ -19,46 +17,63 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        .logo {
-            margin-right: 18px;
-            svg {
+
+        .block_left {
+            display: inline-flex;
+            align-items: center;
+            .logo {
+                margin-right: 18px;
                 height: 75px;
                 width: 250px;
-            }
-        } 
-        .nav {
-            white-space: nowrap;
-            .item {
-                margin-left: 18px;
-                display: inline-flex;
-                flex-direction: column;
-                align-items: center;
-                flex-wrap: nowrap;
                 svg {
-                    margin-bottom: 5px;
-                    filter: invert(1);
-                    width: 25px;
-                    height: 25px;
+                    height: 100%;
+                    width: 100%;
+                } 
+                
+                @media screen and (max-width: $medium-width) {
+                    margin: 0 5px 0 60px;
+                }
+                @media screen and (max-width: $small-width) {
+                    height: calc(75px / 1.2);
+                    width: calc(250px / 1.2); 
                 }
             }
         }
 
-        input { 
-            box-sizing: content-box;
-            width: 50%;
-            height: 40px;
-            border-radius: 30px;
-            border: none;
-            padding: 8px 20px;
-            font-size: 20px;
-            opacity: 0.4;
-            outline: none;
-            transition: all 0.2s;
-            &:focus {
-                border: 1px solid white;
-                opacity: 1;
-                transition: all 0.2s;
+        .block_right {
+            .nav {
+                white-space: nowrap;
+                display: flex;
+                align-items: center;
+
+                a {
+                    color: white;
+                }
+                .item, button {
+                    margin-left: 15px;
+                    display: inline-flex;
+                    flex-direction: column;
+                    align-items: center;
+                    flex-wrap: nowrap;
+                    svg {
+                        margin-bottom: 5px;
+                        filter: invert(1);
+                        width: 25px;
+                        height: 25px;
+                    } 
+                }
+                button {
+                    margin-left: 0;
+                }
             }
+
+            @media screen and (max-width: $small-width) {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: $small-width) {
+            min-height: 80px;
         }
     }
 }

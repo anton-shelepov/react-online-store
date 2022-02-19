@@ -1,11 +1,23 @@
 @import "./../../Components/_Common/variables.scss";
 @import "./../../Components/_Common/mixins.scss";
 
-.profile {
+.profile { 
+
     @include defaultContentBlockParams;
     display: flex;
     justify-content: space-between;
     .block_left {
         flex-grow: 1;
+    } 
+
+    @media screen and (max-width: $large-width) {
+        flex-direction: column; 
+        .block_left {
+            margin-bottom: 10px;
+        }
     }
+
+    @media screen and (max-width: $small-width) { 
+        padding: $small-padding; 
+    } 
 }

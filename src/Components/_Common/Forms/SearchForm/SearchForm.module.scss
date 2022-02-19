@@ -1,0 +1,23 @@
+@import './../../variables.scss';
+
+.search_form { 
+        box-sizing: content-box;
+        width: 50%;
+        height: 40px;
+        border-radius: 30px;
+        border: none;
+        padding: 8px 20px;
+        font-size: 20px;
+        opacity: 0.4;
+        outline: none;
+        transition: all 0.2s;
+        &:focus {
+            border: 1px solid white;
+            opacity: 1;
+            transition: all 0.2s;
+        } 
+
+    @media screen and (max-width: $medium-width) {
+        display: none;
+    }
+}

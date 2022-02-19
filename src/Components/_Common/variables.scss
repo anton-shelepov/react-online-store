@@ -1,11 +1,17 @@
 //Container params
 $container: 1450px; 
 $sidebarWidth: 300px;
-$contentWidth: $container - $sidebarWidth;
+$contentWidth: calc($container - $sidebarWidth);
 
 $card-border-radius: 25px;
 
 $large-padding: 25px; 
+$small-padding: 5px;
+
+//Breakpoints 
+$large-width: 1145px;
+$medium-width: 1000px;
+$small-width: 659px;
 
 //Box shadows inputs
 @mixin input-box-shadow {

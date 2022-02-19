@@ -1,5 +1,5 @@
-import CatalogItem from '../../Components/CatalogItem/CatalogItem';
-import { useAppSelector } from '../../Hooks/hooks';
+import CatalogItem from '../../Components/CatalogItem/CatalogItem'; 
+import { useAppSelector } from '../../Utils/Hooks/hooks';
 import s from './CatalogPage.module.scss';
 
 interface ICatalogPage { }
