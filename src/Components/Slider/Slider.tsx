@@ -1,43 +1,18 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import Slider from "react-slick";
-import { MouseEventHandler } from "react"; 
-import "./Slider.css";
-
-function CustomPrevArrow(props: { className?: string; style?: {}; onClick?: MouseEventHandler<HTMLDivElement> }) {
-    const { className, style, onClick } = props;
-    return (
-        <div
-            className={className}
-            style={{ ...style, display: "block", transform: "scale(3) translate(80%, -15%)", zIndex: "1" }}
-            onClick={onClick}
-        />
-    );
-}
-
-function CustomNextArrow(props: { className?: string; style?: {}; onClick?: MouseEventHandler<HTMLDivElement> }) {
-    const { className, style, onClick } = props;
-    return (
-        <div
-            className={className}
-            style={{ ...style, display: "block", transform: "scale(3) translate(-80%, -15%)" }}
-            onClick={onClick}
-        />
-    );
-}
+import Slider from "react-slick"; 
+import "./Slider.scss"; 
 
 export default function MainSlider() { 
-    const settings = {
+    const settings = { 
         dots: true,
         infinite: true,
         speed: 500, 
         autoplay: true,
         autoplaySpeed: 6000,
         slidesToShow: 1,
-        slidesToScroll: 1,
-        nextArrow: <CustomNextArrow />,
-        prevArrow: <CustomPrevArrow />,
+        slidesToScroll: 1, 
     };
     return (
         <Slider {...settings}>

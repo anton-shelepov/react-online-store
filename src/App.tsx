@@ -9,6 +9,7 @@ import CatalogSidebar from "./Components/CatalogSidebar/CatalogSidebar";
 import MediaQuery from "react-responsive";
 import MobileBottomNav from "./Components/MobileBottomNav/MobileBottomNav";
 import { mediumWidth, smallWidth } from "./Components/_Assets/BreakpointsConsts";
+import CatalogProductsPage from "./Pages/CatalogProductsPage/CatalogProductsPage";
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
                     <Route path='/profile' element={<ProfilePage />} />
                     <Route path='/auth' element={<AuthPage />} />
                     <Route path='/catalog' element={<CatalogPage />} />
+                    <Route path='/catalog/:products' element={<CatalogProductsPage />} />
                 </Routes>
             </div>
 

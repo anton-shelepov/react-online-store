@@ -1,0 +1,44 @@
+@import './../../../_Common/variables.scss';
+@import './../../../_Common/mixins.scss';
+
+.button_with_icon {
+
+    position: relative; 
+
+    cursor: pointer; 
+    background: linear-gradient(to right, #cb115f 0, #3e7692 100%) no-repeat;
+    border: none;
+    height: 50px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 25px;
+    padding: 0 20px 0 20px;
+    white-space: nowrap;
+
+    transition: all 0.3s; 
+
+    svg {
+        filter: invert(1);
+        opacity: 0;
+        position:absolute;
+        top: 5px;
+        left: 40%; 
+        max-width: 20px;
+        max-height: 20px;
+        transition: all 0.15s; 
+    }
+
+    &:hover {
+        transition: all 0.3s; 
+        filter: brightness(0.95);
+        padding-top: 20px;
+        @include button-box-shadow-hover; 
+
+        svg {
+            opacity: 1;
+            transition: all 0.3s; 
+        }
+    }
+}
+

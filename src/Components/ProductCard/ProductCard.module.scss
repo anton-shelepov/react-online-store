@@ -1,0 +1,120 @@
+@import './../_Common/variables.scss';
+@import './../_Common/mixins.scss';
+
+.product_card {
+    display: flex;
+    justify-content: space-between;
+
+    border-radius: 25px;
+    padding: $large-padding;
+    margin-bottom: 15px;
+
+    transition: all 0.3s ease-in-out;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &:hover {
+        transition: all 0.3s ease-in;
+        @include card-box-shadow-hover;
+    }
+
+    @include card-box-shadow; 
+
+    .block_left {
+        display: flex; 
+
+        .product_image {
+            max-width: 150px; 
+            max-height: 128px;
+            margin-right: 25px;
+        }
+        
+        .title {
+            cursor: pointer;
+        }
+
+        .additional {
+            display: flex;
+            flex-direction: column;
+            .rating { 
+                border: 1px solid rgba(133, 133, 133, 0.096);
+                border-radius: 15px; 
+                max-width: fit-content;
+                padding: 7px 10px;
+                display: flex;
+                align-items: center;
+                font-size: 12px;
+                margin: 10px 0;
+                span {
+                    margin-left: 10px;
+                }
+            }
+            .in_stock {
+                margin-left: 5px;
+            }
+        }
+
+        .product_info { 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        } 
+    }
+
+    .block_right {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+
+        .price {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+
+            button {
+                margin-left: 10px;
+            }
+        }
+    }
+
+    @media screen and (max-width: $small-width) {
+        flex-direction: column;
+        padding: $large-padding $small-padding;
+        align-items: center;
+        .block_left {
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            
+            .product_info {
+                align-items: center; 
+                width: 100%;
+                
+                .additional { 
+                    width: 100%; 
+                    margin: 10px 0 35px 0;
+                }
+            }
+
+            .product_image{
+                margin-bottom: 25px;
+            } 
+        }
+
+        .block_right {
+            flex-direction: row;
+            justify-content: space-between; 
+            align-items: center;
+            width: 90%;
+            .price {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

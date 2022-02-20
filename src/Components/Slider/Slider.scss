@@ -1,0 +1,28 @@
+.slick-slide img { 
+    width: 100%; 
+    border-radius: 40px;
+} 
+
+.slide-content {
+    outline: none;
+}
+
+.slick-dots {
+    bottom: -30px;
+} 
+
+.slick-prev {
+    display: block; 
+    transform: scale(3) translate(80%, -15%);
+    z-index: 1;
+}
+
+.slick-next {
+    display: block; 
+    transform: scale(3) translate(-80%, -15%);
+    transition: color .2s;
+}
+
+.slick-next:before, .slick-prev:before {
+    transition: all 0.2s; 
+}

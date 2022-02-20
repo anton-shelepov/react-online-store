@@ -1,0 +1,30 @@
+@import "./../../mixins.scss";
+@import "./../../variables.scss";
+
+.favorite_button {
+    font-size: 25px; 
+    span { 
+        background: rgb(175, 175, 175);
+        background-clip: text; 
+        -webkit-text-fill-color: transparent;
+    } 
+
+    border-radius: 50%; 
+    cursor: pointer; 
+    opacity: .3; 
+    @include gradientBorder(1px);
+    transition: all 0.3s; 
+    &:hover {
+        transition: all 0.3s;
+        transform: scale(1.1); 
+    }
+}
+
+.favorite {
+    opacity: 1;
+    span { 
+        background: linear-gradient(to right, #cb115f 0, #3e7692 100%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}

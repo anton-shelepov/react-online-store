@@ -22,8 +22,7 @@
 
     svg {
         width: 29px;
-        height: 29px;
-        margin-top: 5px;
+        height: 29px; 
         margin: 5px;
         padding: 3px;
         filter: opacity(0.6);
@@ -31,7 +30,7 @@
     
     .active {
         background-color: rgba(0, 0, 0, 0.603);
-        border-radius: 15px; 
+        border-radius: 15px;
         svg {
             filter: invert(1) opacity(1);
         }

@@ -1,0 +1,11 @@
+@import './../../Components/_Common/variables.scss';
+@import './../../Components/_Common/mixins.scss';
+
+
+.catalog_product_page {
+    @include defaultContentBlockParams;
+
+    @media screen and (max-width: $small-width) {
+        padding: $large-padding $small-padding;
+    }
+}

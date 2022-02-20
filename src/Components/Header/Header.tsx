@@ -6,7 +6,7 @@ import { useAppSelector } from '../../Utils/Hooks/hooks'
 import CatalogBurgerMenu from '../CatalogBurgerMenu/CatalogBurgerMenu'
 import MediaQuery from 'react-responsive'
 import { mediumWidth, smallWidth } from '../_Assets/BreakpointsConsts'
-import SearchButton from '../_Common/Buttons/SubmitButton/SeacrhButton/SearchButton'
+import SearchButton from './../_Common/Buttons/SeacrhButton/SearchButton'
 
 type Props = {
 
