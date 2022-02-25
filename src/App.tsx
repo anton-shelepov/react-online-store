@@ -10,6 +10,7 @@ import MediaQuery from "react-responsive";
 import MobileBottomNav from "./Components/MobileBottomNav/MobileBottomNav";
 import { mediumWidth, smallWidth } from "./Components/_Assets/BreakpointsConsts";
 import CatalogProductsPage from "./Pages/CatalogProductsPage/CatalogProductsPage";
+import ProductPage from "./Pages/ProductPage/ProductPage";
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
                     <Route path='/auth' element={<AuthPage />} />
                     <Route path='/catalog' element={<CatalogPage />} />
                     <Route path='/catalog/:products' element={<CatalogProductsPage />} />
+                    <Route path='/product/:id' element={<ProductPage />} />
                 </Routes>
             </div>
 

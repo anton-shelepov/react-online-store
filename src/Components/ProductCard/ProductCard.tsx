@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import { priceFormatter } from '../../Utils/CommonScripts/PriceFormatter';
 import Rating from '../Rating/Rating';
 import ButtonWithIcon from '../_Common/Buttons/ButtonWithIcon/ButtonWithIcon';
 import FavoriteButton from '../_Common/Buttons/FavoriteButton/FavoriteButton';
@@ -9,28 +11,41 @@ interface IProductCard {
     reviewsCount: number;
     isInStock: boolean;
     isFavorite: boolean;
-    price: any;
+    price: number;
+    discount?: number;
+    oldPrice?: number;
 }
 
-const ProductCard: React.FC<IProductCard> = ({ image, title, reviewsCount, isInStock, isFavorite, price }) => {
+const ProductCard: React.FC<IProductCard> = ({ image, title, reviewsCount, isInStock, isFavorite, price, discount = 0, oldPrice = 0 }) => { 
+
     return (
         <div className={s.product_card}>
             <div className={s.block_left}>
                 <img src={image} className={s.product_image} alt='product' />
                 <div className={s.product_info}>
-                    <h3 className={s.title}>{title}</h3>
+                    <Link to='/product/1'><h3 className={s.title}>{title}</h3></Link>
                     <div className={s.additional}>
                         <div className={s.rating}>
-                            <Rating />
-                            <span>{reviewsCount}</span>
+                            <Rating reviewsCount={reviewsCount} />
                         </div>
-                        <p className={s.in_stock}>В наличии: {isInStock ? "есть" : "отсутствует"}</p>
+                        <p className={s.in_stock}>В наличии: {isInStock ? "есть" : "нет"}</p>
                     </div>
                 </div>
             </div>
             <div className={s.block_right}>
-                <p className={s.price}>{price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} р.</p>
-                <div className={s.buttons}> 
+                <div className={s.price}>
+                    { 
+                        discount !== 0 && (
+                            <>
+                                <span className={s.discount}>{`-${discount}%`}</span>
+                                <span className={s.old_price}>{priceFormatter(price)}</span>
+                            </> 
+                        ) 
+                    }
+                    <p className={s.current_price}>{priceFormatter(price)}</p>
+                </div>
+
+                <div className={s.buttons}>
                     <FavoriteButton isFavorite={isFavorite} />
                     <ButtonWithIcon content='В корзину' icon='basket' />
                 </div>

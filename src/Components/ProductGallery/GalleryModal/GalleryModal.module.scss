@@ -1,0 +1,13 @@
+.container { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 90vw; 
+    height: 70vh;
+    color: white;
+    .slider {
+        max-height: 100%;
+        max-width: 40%;
+    }
+}

@@ -2,7 +2,7 @@
 @import './../_Common/variables.scss';
 
 .catalog_item {
-    display: flex; 
+    display: flex;
     flex-direction: column;
     align-items: center; 
 
@@ -13,10 +13,10 @@
     margin: 15px;
     transition: all 0.3s; 
     font-size: 18px;
+    max-width: fit-content;
 
     img {
-        width: 253.5px;
-        height: 190px;
+        width: 205px; 
     }
 
     .item_name {

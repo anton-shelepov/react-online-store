@@ -1,0 +1,60 @@
+@import "./../_Common/variables.scss";
+@import "./../_Common/mixins.scss";
+
+.large_product_card {
+    display: flex;
+
+    border-radius: 25px;
+    padding: $large-padding;
+    @include card-box-shadow;
+
+    .product_info {
+
+        .main_parameters {
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .buy {
+            display: flex;
+            justify-content: space-between;
+
+            @include card-box-shadow-hover;
+            padding: 15px;
+            border-radius: 20px;
+            margin-top: 25px;
+
+            .price {
+                text-align: end;
+                .discount {
+                    opacity: 0.6;
+                    font-size: 15px;
+
+                    .discount_size {
+                        color: red;
+                    }
+                    .old_price {
+                        opacity: 0.6;
+                        margin-left: 5px;
+                        font-size: 14px;
+                        text-decoration: line-through;
+                    }
+                }
+
+                .current_price { 
+                    font-size: 20px;
+                    margin-bottom: 2px;
+                }
+            }
+
+            .buttons { 
+                display: flex;
+                align-items: center;
+
+                button {
+                    margin-right: 10px;
+                }
+            }
+        } 
+    }
+}

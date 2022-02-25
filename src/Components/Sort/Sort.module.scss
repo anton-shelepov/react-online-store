@@ -1,0 +1,78 @@
+@import "./../_Common/mixins.scss";
+@import "./../_Common/variables.scss"; 
+
+.sort {
+    display: flex;
+    align-items: center;
+
+    span {
+        font-weight: 600;
+        margin-right: 7px;
+    }
+
+    @media screen and (max-width: $small-width) {
+        width: 100%;
+    } 
+
+    .inline_sort {
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+
+        @media screen and (max-width: $small-width) {
+            display: none;
+        }
+
+        input[type='radio'] {
+            display: none;
+        } 
+
+        .sort_item {
+            display: inline;
+            margin: 0 5px;
+            padding: 10px 0;
+
+            @include unselectable;
+            color: rgb(141, 141, 141);
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+
+            &:hover {
+                transition: all 0.2s;
+                color: rgb(88, 88, 88);
+            }
+            &:first-child {
+                margin: 0 5px 0 0;
+            }
+        }
+        .price {
+            position: relative; 
+        }
+        //Modificators
+        .arrow_top {
+            &:after {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                content: url("./../../Images/svgIcons/arrow.svg");
+                transform: rotate(180deg) translate(50%, 15%);
+            }
+        }
+        .arrow_bottom {
+            &:after {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                content: url("./../../Images/svgIcons/arrow.svg");
+                transform: translate(-50%, 40%);
+            }
+        }
+    } 
+
+    .active {
+        color: #72517f !important;
+        text-decoration: underline;
+    }
+}
+

@@ -2,7 +2,7 @@
 @import "./../../variables.scss";
 
 .favorite_button {
-    font-size: 25px; 
+    font-size: 30px; 
     span { 
         background: rgb(175, 175, 175);
         background-clip: text; 
@@ -11,8 +11,9 @@
 
     border-radius: 50%; 
     cursor: pointer; 
-    opacity: .3; 
-    @include gradientBorder(1px);
+    opacity: .3;
+    border: none;
+    background-color: white;
     transition: all 0.3s; 
     &:hover {
         transition: all 0.3s;

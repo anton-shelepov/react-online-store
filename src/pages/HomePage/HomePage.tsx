@@ -7,10 +7,17 @@ import ViewedProducts from '../../Components/ViewedProducts/ViewedProducts'
 import { IHomeState } from '../../Types/homeTypes'
 
 
+const images = [
+    'https://images.wbstatic.net/bners1/big_spring_16_02.jpg',
+    'https://images.wbstatic.net/bners1/elsakka.jpg',
+    'https://images.wbstatic.net/bners1/big_23fev_16_02.jpg',
+    'https://images.wbstatic.net/bners1/big_best999.jpg',
+]
+
 const HomePage: React.FC<IHomeState> = (props) => {
     return (
         <div className={s.home}>
-            <MainSlider /> 
+            <MainSlider images={images} /> 
             <Discounts discounts={props.discounts} />
             <ViewedProducts />
         </div>

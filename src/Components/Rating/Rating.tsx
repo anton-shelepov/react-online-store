@@ -3,10 +3,10 @@ import s from './Rating.module.scss';
 import RatingIcon from './RatingIcon/RatingIcon';
 
 interface IRating {
-    
+    reviewsCount: number;
 }
 
-const Rating: React.FC<IRating> = (props) => {
+const Rating: React.FC<IRating> = ({ reviewsCount }) => {
 
     const [rating, setRating] = useState(0);
 
@@ -37,6 +37,7 @@ const Rating: React.FC<IRating> = (props) => {
                         onSaveRating={onSaveRating} />
                 )
             })}
+            <span>{reviewsCount}</span>
         </div>
     );
 }

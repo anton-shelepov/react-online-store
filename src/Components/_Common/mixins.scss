@@ -1,4 +1,4 @@
-@mixin defaultContentBlockParams { 
+@mixin defaultContentBlockParams {
     max-width: $container;
     width: 100%;
     background-color: white;
@@ -9,7 +9,7 @@
 }
 
 @mixin pageTitle {
-    margin-bottom: 35px;
+    margin-bottom: 25px;
 }
 
 // Inputs
@@ -76,4 +76,14 @@
     background-image: linear-gradient(white, white), linear-gradient(to right, #cb115f 0, #3e7692 100%);
     background-origin: border-box;
     background-clip: padding-box, border-box;
+}
+
+//Unselectable
+@mixin unselectable {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
 }

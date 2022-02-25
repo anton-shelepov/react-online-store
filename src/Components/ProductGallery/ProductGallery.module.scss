@@ -1,0 +1,29 @@
+.product_gallery {
+    display: flex; 
+
+    .images_list {
+        display: flex;
+        flex-direction: column; 
+
+        .small_image {
+            width: 70px;
+            height: 70px;
+            cursor: pointer; 
+            margin-bottom: 10px; 
+            transition: all 0.3s;
+            border: 7px solid white;
+            &:hover { 
+                transform: scale(1.2) translateX(7%);
+                transition: all 0.3s;
+            }
+        } 
+    }
+
+    .main_image {
+        .large_image {
+            max-width: 420px;
+            margin: 0 25px 0 50px;
+            cursor: zoom-in;
+        }
+    }
+}

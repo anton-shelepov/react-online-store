@@ -1,7 +1,17 @@
 .rating {
     display: flex;
-    
+    border: 1px solid rgba(133, 133, 133, 0.096);
+    border-radius: 15px;
+    max-width: fit-content;
+    padding: 7px 10px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    margin: 10px 0;
+    span {
+        margin-left: 10px;
+    }
     .rating_icon {
         margin-right: 3px;
-    } 
+    }
 }
