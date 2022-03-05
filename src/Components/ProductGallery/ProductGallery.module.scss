@@ -1,5 +1,12 @@
+@import './../_common/variables.scss';
+@import './../_common/mixins.scss';
+
 .product_gallery {
     display: flex; 
+    
+    @media screen and (max-width: $small-width) {
+        display: none;
+    } 
 
     .images_list {
         display: flex;
@@ -19,10 +26,15 @@
         } 
     }
 
-    .main_image {
+    .main_image { 
+        margin: 0 25px 0 50px; 
+
+        @media screen and (max-width: $small-width) {
+            margin: 0 0 0 25px;
+        } 
+
         .large_image {
-            max-width: 420px;
-            margin: 0 25px 0 50px;
+            width: 100%;
             cursor: zoom-in;
         }
     }

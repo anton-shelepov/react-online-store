@@ -1,6 +1,6 @@
-import { AuthActionTypes } from "../Actions/AuthActions/authActionsCreators";
-import { SET_USER_AUTH } from "../Actions/AuthActions/authActionsTypes";
-import { IAuthState } from "./../../Types/authTypes";
+import { AuthActionTypes } from "../actions/authActions/authActions";
+import { SET_USER_AUTH } from "../actions/authActions/authActionsTypes";
+import { IAuthState } from "../../types/authTypes";
 
 const initialState: IAuthState = { 
     email: "",

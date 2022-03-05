@@ -5,8 +5,9 @@ import TextInput from '../../Inputs/TextInput/TextInput';
 import { loginSchema } from '../FormsSchemas';
 import SubmitButton from '../../Buttons/SubmitButton/SubmitButton';
 import { Dispatch, SetStateAction } from 'react';
-import { setUserAuth } from '../../../../Redux/Actions/AuthActions/authActionsCreators';
-import { useAppDispatch } from '../../../../Utils/Hooks/hooks';
+import { setUserAuth } from '../../../../store/actions/authActions/authActions';
+import { useAppDispatch } from '../../../../utils/hooks/hooks';
+import { api } from '../../../../api';
 
 export interface ILoginForm {
     
@@ -32,7 +33,7 @@ const LoginForm: React.FC<LoginFormProps> = ({setForm}) => {
 
     const onSubmit = handleSubmit((data) => { 
         dispatch(setUserAuth())
-        debugger
+        // api.auth.setUserAuth(data)
         reset();
     })
 

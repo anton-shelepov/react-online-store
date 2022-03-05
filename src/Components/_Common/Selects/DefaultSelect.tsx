@@ -1,13 +1,4 @@
-import { useState } from 'react';
-import Select, { ActionMeta, PropsValue, SingleValue } from 'react-select';
-
-const options = [
-    { value: 'popularity', label: 'Популярности' },
-    { value: 'rating', label: 'Рейтингу' },
-    { value: 'priceMax', label: 'Цене ⇡' },
-    { value: 'priceMin', label: 'Цене ⇣' },
-    { value: 'discount', label: 'Скидке' },
-];
+import Select, { ActionMeta, PropsValue, SingleValue } from 'react-select'; 
 
 const styles = {
 
@@ -40,20 +31,24 @@ const styles = {
 
 export interface ISelectOption {
     value: string;
-    label: string;
+    label: string; 
 }
 
 interface ISelectProps {
     defaultValue?: any | PropsValue<{ value: string; label: string; }> | undefined;
-    onChange: ((newValue: SingleValue<{ value: string; label: string; }>, actionMeta: ActionMeta<{ value: string; label: string; }>) => void) | undefined;
+    onChange?: ((newValue: SingleValue<{ value: string; label: string; }>, actionMeta: ActionMeta<{ value: string; label: string; }>) => void) | undefined;
+    options: {
+        value: string;
+        label: string;
+    } []
 }
 
-const DefaultSelect: React.FC<ISelectProps> = ({ onChange, defaultValue }) => { 
+const DefaultSelect: React.FC<ISelectProps> = ({ onChange, defaultValue, options }) => { 
     return (
         <Select
             options={options}
             onChange={onChange}
-            defaultValue={options.find((option) => option.value === defaultValue)}
+            defaultValue={options.find((option) => option.value === defaultValue)} 
             styles={styles}
             placeholder='' />
     )

@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import LoginForm from '../../Components/_Common/Forms/AuthForms/LoginForm';
-import RegistrationForm from '../../Components/_Common/Forms/AuthForms/RegistrationForm';
+import LoginForm from '../../components/_common/Forms/AuthForms/LoginForm';
+import RegistrationForm from '../../components/_common/Forms/AuthForms/RegistrationForm';
 import s from './AuthPage.module.scss';
 
 
@@ -8,7 +8,7 @@ interface IAuthPage {
 
 }
 
-const AuthPage: React.FC = (props: IAuthPage) => {
+const AuthPage: React.FC<IAuthPage> = ({}) => {
 
     const [form, setForm] = useState('login');
 

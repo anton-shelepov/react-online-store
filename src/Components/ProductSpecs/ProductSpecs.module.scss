@@ -1,0 +1,35 @@
+@import './../_common/variables.scss';
+@import './../_common/mixins.scss';
+
+.product_specs {
+    @include defaultContentBlockParams;
+    margin-top: 20px;
+
+    @media screen and (max-width: $small-width) {
+        padding: $large-padding $small-padding;
+    } 
+
+    .spec_group { 
+
+        margin-top: 25px;
+
+        .spec_item {
+            display: flex;
+            justify-content: space-between;
+
+            margin-top: 15px;
+            align-items: center;
+
+            .spec_title {
+                flex-grow: 1;
+                border-bottom: 1px rgb(179, 179, 179) dotted;
+            }
+
+            .spec_value {
+                max-width: 50%;
+                margin-left: 10px;
+            }
+        }
+    } 
+}
+

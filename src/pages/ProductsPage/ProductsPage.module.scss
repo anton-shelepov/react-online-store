@@ -1,7 +1,7 @@
 @import "./../../Components/_Common/variables.scss";
 @import "./../../Components/_Common/mixins.scss";
 
-.catalog_products_page {
+.products_page {
     @include defaultContentBlockParams; 
 
     @media screen and (max-width: $small-width) {

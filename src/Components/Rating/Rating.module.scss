@@ -8,8 +8,8 @@
     align-items: center;
     font-size: 12px;
     margin: 10px 0;
-    span {
-        margin-left: 10px;
+    span:not(:empty) {
+        margin-left: 10px; 
     }
     .rating_icon {
         margin-right: 3px;

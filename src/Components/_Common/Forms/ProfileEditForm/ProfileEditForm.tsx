@@ -4,7 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import RadioInput from '../../Inputs/RadioInput/RadioInput';
 import TextInput from '../../Inputs/TextInput/TextInput';
 import SubmitButton from '../../Buttons/SubmitButton/SubmitButton';
-import { profileEditSchema } from './../FormsSchemas';
+import { profileEditSchema } from '../FormsSchemas';
 import NumberFormat from 'react-number-format';
 import TextInputMask from '../../Inputs/TextInput/TextInputMask';
 

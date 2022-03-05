@@ -5,31 +5,36 @@ import Slider from "react-slick";
 import "./Slider.scss";
 
 interface IMainSlider {
-    images: string[];
+    images: string[]; 
+    isDots?: boolean;
+    isArrows?: boolean;
 }
 
-export default function MainSlider({ images }: IMainSlider) {
+export default function MainSlider({ images, isDots = true, isArrows = true }: IMainSlider) {
+
     const settings = {
-        dots: true,
+        dots: isDots,
+        arrows: isArrows,
         infinite: true,
         speed: 500,
         autoplay: true,
         autoplaySpeed: 6000,
         slidesToShow: 1,
-        slidesToScroll: 1,
+        slidesToScroll: 1, 
+        customPaging: (i: any) => <img src={images[i]} alt='dots' /> 
     };
+
     return (
         <Slider {...settings}>
             {
                 images.map((image) => {
                     return (
-                        <div className="slide-content">
+                        <div key={image} className="slide-content">
                             <img src={image} alt='slide-content' />
                         </div>
                     )
                 })
             }
-
         </Slider>
     );
 }

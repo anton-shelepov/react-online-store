@@ -1,27 +1,50 @@
-import { priceFormatter } from '../../Utils/CommonScripts/PriceFormatter';
+import { useEffect } from 'react';
+import MediaQuery from 'react-responsive';
+import { ProductInfo } from '../../types/productTypes';
+import { priceFormatter } from '../../utils/commonScripts/PriceFormatter';
 import ProductGallery from '../ProductGallery/ProductGallery';
-import Rating from '../Rating/Rating';
-import ButtonWithIcon from '../_Common/Buttons/ButtonWithIcon/ButtonWithIcon';
-import FavoriteButton from '../_Common/Buttons/FavoriteButton/FavoriteButton';
+import StaticRating from '../Rating/StaticRating/StaticRating';
+import MainSlider from '../Slider/Slider';
+import { smallWidth } from '../_assets/BreakpointsConsts';
+import { GlobalSvgSelector } from '../_assets/GlobalSvgSelector';
+import ButtonWithIcon from '../_common/Buttons/ButtonWithIcon/ButtonWithIcon';
+import FavoriteButton from '../_common/Buttons/FavoriteButton/FavoriteButton';
 import s from './LargeProductCard.module.scss';
 
-interface ILargeProductCard {
-    discount?: number;
-}
 
-const LargeProductCard: React.FC<ILargeProductCard> = ({ discount = 15 }) => {
+const LargeProductCard: React.FC<ProductInfo> = ({
+    images,
+    title,
+    mainSpecs,
+    rating,
+    reviews,
+    discount,
+    oldPrice,
+    price,
+    isFavorite,
+    isInStock,
+    deliveryPrice, }) => {
+
+    useEffect(() => {
+        // Request for product data by id
+    }, [])
+
     return (
         <div className={s.large_product_card}>
 
-            <ProductGallery />
+            <ProductGallery images={images} />
+
+            <MediaQuery maxWidth={smallWidth}>
+                <MainSlider isArrows={false} images={images} />
+            </MediaQuery>
 
             <div className={s.product_info}>
                 <span className={s.main_parameters}>2560x1600, IPS, Apple M1, 8 ядер, RAM 16 ГБ, SSD 256 ГБ, Apple M1 7-core , macOS</span>
-                <Rating reviewsCount={123} />
+                <StaticRating rating={rating} reviews={reviews} />
                 <div className={s.buy}>
                     <div className={s.price}>
                         <div className={s.current_price}>
-                            <span className={s.current_price}>{priceFormatter(100000)}</span>
+                            <span>{priceFormatter(100000)}</span>
                         </div>
                         <div className={s.discount}>
                             {
@@ -32,12 +55,23 @@ const LargeProductCard: React.FC<ILargeProductCard> = ({ discount = 15 }) => {
                                     </>
                                 )
                             }
-                        </div> 
+                        </div>
                     </div>
                     <div className={s.buttons}>
                         <FavoriteButton isFavorite={false} />
                         <ButtonWithIcon content='В корзину' icon='basket' />
                     </div>
+                </div>
+                <div className={s.order}>
+                    <div className={s.order_info}>
+                        <p className={s.in_stock}>В наличии:
+                            <span className={s.in_stock__value}>{isInStock ? 'есть' : 'нет'}</span>
+                        </p>
+                        <p className={s.delivery_time}>Стоимость доставки:
+                            <span className={s.delivery_time__value}>{deliveryPrice ? priceFormatter(deliveryPrice) : 'бесплатно'}</span>
+                        </p>
+                    </div>
+                    <GlobalSvgSelector id='delivery' />
                 </div>
             </div>
         </div>

@@ -1,5 +1,3 @@
-import s from './StarIcon.module.scss';
-
 interface IStarIcon { 
     fill?: string;
 }

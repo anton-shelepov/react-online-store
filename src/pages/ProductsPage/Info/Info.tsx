@@ -1,4 +1,4 @@
-import Sort from '../../../Components/Sort/Sort';
+import Sort from '../../../components/Sort/Sort';
 import s from './Info.module.scss';
 
 interface IInfo { }

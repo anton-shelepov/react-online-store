@@ -1,10 +1,10 @@
 import { connect } from 'react-redux'
-import Discounts from '../../Components/Discounts/Discounts'
-import MainSlider from '../../Components/Slider/Slider'
-import { RootState } from '../../Redux/store'
+import Discounts from '../../components/Discounts/Discounts'
+import MainSlider from '../../components/Slider/Slider'
+import { RootState } from '../../store/store'
 import s from './HomePage.module.scss'
-import ViewedProducts from '../../Components/ViewedProducts/ViewedProducts'
-import { IHomeState } from '../../Types/homeTypes'
+import ViewedProducts from '../../components/ViewedProducts/ViewedProducts'
+import { IHomeState } from '../../types/homeTypes'
 
 
 const images = [
@@ -17,7 +17,7 @@ const images = [
 const HomePage: React.FC<IHomeState> = (props) => {
     return (
         <div className={s.home}>
-            <MainSlider images={images} /> 
+            <MainSlider images={images} isDots={false} /> 
             <Discounts discounts={props.discounts} />
             <ViewedProducts />
         </div>

@@ -1,0 +1,42 @@
+@import "./../_Common/mixins.scss";
+@import "./../_Common/variables.scss";
+
+.container { 
+    @media screen and (max-width: $small-width) {
+        flex-direction: row;
+    }
+    .catalog_item {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include card-box-shadow;
+        @include gradientBorder(1px);
+        border-radius: $card-border-radius;
+        padding: 20px;
+        margin: 10px;
+        transition: all 0.3s;
+        font-size: 18px;
+        max-width: fit-content;
+
+        @media screen and (max-width: $small-width) { 
+            flex-direction: row; 
+            width: 100%;
+        }
+
+        img {
+            width: 214px;
+        }
+
+        .item_name {
+            margin: 10px 0;
+        }
+
+        &:hover {
+            transition: all 0.3s;
+            transform: scale(1.03);
+            @include card-box-shadow-hover;
+            filter: brightness(0.98);
+        }
+    }
+}

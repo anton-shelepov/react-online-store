@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
 import s from './Header.module.scss'
-import { GlobalSvgSelector } from '../_Assets/GlobalSvgSelector'
-import SearchForm from '../_Common/Forms/SearchForm/SearchForm'
-import { useAppSelector } from '../../Utils/Hooks/hooks'
+import { GlobalSvgSelector } from '../_assets/GlobalSvgSelector'
+import SearchForm from '../_common/Forms/SearchForm/SearchForm'
+import { useAppSelector } from '../../utils/hooks/hooks'
 import CatalogBurgerMenu from '../CatalogBurgerMenu/CatalogBurgerMenu'
 import MediaQuery from 'react-responsive'
-import { mediumWidth, smallWidth } from '../_Assets/BreakpointsConsts'
-import SearchButton from './../_Common/Buttons/SeacrhButton/SearchButton'
+import { mediumWidth, smallWidth } from '../_assets/BreakpointsConsts'
+import SearchButton from '../_common/Buttons/SeacrhButton/SearchButton'
 
 type Props = {
 

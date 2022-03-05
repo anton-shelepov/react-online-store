@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
-import { useAppSelector } from '../../Utils/Hooks/hooks';
-import { GlobalSvgSelector } from '../_Assets/GlobalSvgSelector';
-import SearchButton from './../_Common/Buttons/SeacrhButton/SearchButton';
+import { useAppSelector } from '../../utils/hooks/hooks';
+import { GlobalSvgSelector } from '../_assets/GlobalSvgSelector';
+import SearchButton from '../_common/Buttons/SeacrhButton/SearchButton';
 import s from './MobileBottomNav.module.scss';
 
 interface IMobileBottomNav { }

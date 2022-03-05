@@ -1,8 +1,12 @@
-@import './../../Components/_Common/variables.scss';
-@import './../../Components/_Common/mixins.scss';
+@import "./../../Components/_Common/variables.scss";
+@import "./../../Components/_Common/mixins.scss";
 
 .product_page {
     @include defaultContentBlockParams;
+
+    @media screen and (max-width: $small-width) {
+        padding: $large-padding $small-padding;
+    }
 
     .title {
         @include pageTitle;

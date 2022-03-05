@@ -1,4 +1,4 @@
-import { GlobalSvgSelector } from './../../../_Assets/GlobalSvgSelector';
+import { GlobalSvgSelector } from '../../../_assets/GlobalSvgSelector';
 import s from './SearchButton.module.scss';
 
 interface ISearchButton { }

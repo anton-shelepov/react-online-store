@@ -1,13 +1,42 @@
+@import './../../_common/variables.scss';
+@import './../../_common/mixins.scss';
+
 .container { 
+    position: relative;
+
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; 
 
     width: 90vw; 
-    height: 70vh;
+    height: 84vh;
     color: white;
-    .slider {
-        max-height: 100%;
-        max-width: 40%;
+
+    .close_btn {
+        position: absolute;
+        top: 3%;
+        right: 3%; 
+        background-color: white;
+        border: none;
+        cursor: pointer;
+        transition: all .3s;
+
+        &:hover {
+            transition: all .3s;
+            transform: scale(1.2) rotate(90deg)
+        }
+        svg {
+            opacity: .5;
+            max-height: 25px;
+            max-width: 25px;
+        }
+    }
+
+    .slider { 
+        width: 770px; 
+
+        @media screen and (max-width: $medium-width){
+            width: 85%;
+        }
     }
 }

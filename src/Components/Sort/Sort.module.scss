@@ -1,5 +1,5 @@
-@import "./../_Common/mixins.scss";
-@import "./../_Common/variables.scss"; 
+@import "./../_common/mixins.scss";
+@import "./../_common/variables.scss"; 
 
 .sort {
     display: flex;
@@ -55,7 +55,7 @@
                 position: absolute;
                 top: 0;
                 left: 50%;
-                content: url("./../../Images/svgIcons/arrow.svg");
+                content: url("./../../images/svgIcons/arrow.svg");
                 transform: rotate(180deg) translate(50%, 15%);
             }
         }
@@ -64,7 +64,7 @@
                 position: absolute;
                 bottom: 0;
                 left: 50%;
-                content: url("./../../Images/svgIcons/arrow.svg");
+                content: url("./../../images/svgIcons/arrow.svg");
                 transform: translate(-50%, 40%);
             }
         }

@@ -1,0 +1,56 @@
+@import "./../_common/variables.scss";
+@import "./../_common/mixins.scss";
+
+.reviews {
+    @include defaultContentBlockParams;
+    margin-top: 25px;
+
+    @media screen and (max-width: $small-width) {
+        padding: $large-padding $small-padding;
+    } 
+
+    .title {
+        margin-bottom: 25px;
+    }
+
+    .review_item {
+        @include card-box-shadow;
+        border-radius: 15px;
+        background-color: #ffffff;
+        padding: 25px;
+        line-height: 1.75;
+        margin-top: 25px;
+
+        @media screen and (max-width: $small-width) {
+            padding: $large-padding 10px;
+        } 
+
+        .info {
+            display: flex;
+            align-items: center;
+            span {
+                margin-left: 10px;
+            }
+        }
+
+        .used_term {
+            margin: 10px 0;
+            span {
+                font-weight: normal;
+            }
+        }
+
+        .dignity, .flaws, .comment {
+            display: flex;
+            flex-direction: column
+        }
+
+        .section_title {
+            margin-bottom: 5px;
+        }
+        .section_description {
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+    }
+}

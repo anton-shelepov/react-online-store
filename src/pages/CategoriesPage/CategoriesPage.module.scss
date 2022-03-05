@@ -1,0 +1,17 @@
+@import "./../../Components/_Common/variables.scss";
+@import "./../../Components/_Common/mixins.scss";
+
+.categories_page {
+    @include defaultContentBlockParams; 
+    .page_title {
+        @include pageTitle;
+    }
+    .categories_items { 
+        margin-top: 50px;
+        @media screen and (max-width: $small-width) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}

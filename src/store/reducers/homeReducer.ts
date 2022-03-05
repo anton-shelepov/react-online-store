@@ -1,4 +1,4 @@
-import { IHomeState } from "../../Types/homeTypes";
+import { IHomeState } from "../../types/homeTypes";
 
 const initialState: IHomeState = { 
     discounts: [

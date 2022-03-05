@@ -1,14 +1,16 @@
 import s from "./TextInput.module.scss";
-
+import classNames from 'classnames'
+import { useState } from "react";
 
 interface IInputProps {
     required?: boolean;
     errors?: any;
     type?: string;
-    label: string;
+    label?: string;
     name: string;
-    register?: any; 
-    [x:string]: any;
+    register?: any;
+    textarea?: boolean;
+    [x: string]: any;
 }
 
 const TextInput: React.FC<IInputProps> = ({
@@ -17,14 +19,21 @@ const TextInput: React.FC<IInputProps> = ({
     label,
     name,
     errors,
-    type = "text", 
+    type = "text",
+    textarea = false,
     ...props
 }: IInputProps) => {
 
+    const labelClasses = classNames(s.input_label, required && s.required) 
+
     return (
         <div className={s.text_input}>
-            <label className={required ? s.required : undefined} htmlFor={name}>{label}</label>
-            <input {...register(name)} id={name} type={type} {...props} /> 
+            {label && <label className={labelClasses} htmlFor={name}>{label}</label>}
+            {
+                textarea
+                    ? <textarea {...register(name)} id={name} type={type} {...props} />
+                    : <input {...register(name)} id={name} type={type} {...props} />
+            }
             {
                 errors?.[name] && <p className={s.error}>{errors?.[name]?.message || "Ошибка!"}</p>
             }

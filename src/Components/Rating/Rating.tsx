@@ -1,14 +1,14 @@
-import { SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import s from './Rating.module.scss';
 import RatingIcon from './RatingIcon/RatingIcon';
 
 interface IRating {
-    reviewsCount: number;
+    reviews?: number;
+    setRating: Dispatch<SetStateAction<number>>
+    rating: number;
 }
 
-const Rating: React.FC<IRating> = ({ reviewsCount }) => {
-
-    const [rating, setRating] = useState(0);
+const Rating: React.FC<IRating> = ({reviews, setRating, rating}) => { 
 
     const [hoverRating, setHoverRating] = useState(0);
 
@@ -37,7 +37,7 @@ const Rating: React.FC<IRating> = ({ reviewsCount }) => {
                         onSaveRating={onSaveRating} />
                 )
             })}
-            <span>{reviewsCount}</span>
+            <span>{reviews}</span>
         </div>
     );
 }

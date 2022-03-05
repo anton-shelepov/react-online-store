@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import { FormEventHandler, MouseEventHandler, useEffect, useState } from 'react';
 import MediaQuery from 'react-responsive';
-import { smallWidth } from '../_Assets/BreakpointsConsts';
-import DefaultSelect from '../_Common/Selects/DefaultSelect';
+import { smallWidth } from '../_assets/BreakpointsConsts';
+import DefaultSelect from '../_common/Selects/DefaultSelect';
 import s from './Sort.module.scss';
 
 interface ISort { }
@@ -27,7 +27,7 @@ const Sort: React.FC<ISort> = (props) => {
         setSortValue(targetValue)
     }
 
-    const onSelectChange = (newValue: any) => { 
+    const onSelectChange = (newValue: any) => {
         setSortValue(newValue.value)
     }
 
@@ -44,6 +44,14 @@ const Sort: React.FC<ISort> = (props) => {
         sortValue === "priceMax" && `${s.arrow_top} ${s.active}`,
         sortValue === "priceMin" && `${s.arrow_bottom} ${s.active}`
     )
+
+    const options = [
+        { value: 'popularity', label: 'Популярности' },
+        { value: 'rating', label: 'Рейтингу' },
+        { value: 'priceMax', label: 'Цене ⇡' },
+        { value: 'priceMin', label: 'Цене ⇣' },
+        { value: 'discount', label: 'Скидке' },
+    ];
 
     return (
         <div className={s.sort} >
@@ -88,7 +96,7 @@ const Sort: React.FC<ISort> = (props) => {
             </div>
 
             <MediaQuery maxWidth={smallWidth}>
-                <DefaultSelect onChange={onSelectChange} defaultValue={sortValue} />
+                <DefaultSelect onChange={onSelectChange} defaultValue={sortValue} options={options} />
             </MediaQuery>
 
         </div>

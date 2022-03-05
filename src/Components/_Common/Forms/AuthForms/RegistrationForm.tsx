@@ -7,6 +7,7 @@ import SubmitButton from '../../Buttons/SubmitButton/SubmitButton';
 import { Dispatch, SetStateAction } from 'react';
 import NumberFormat from 'react-number-format';
 import TextInputMask from '../../Inputs/TextInput/TextInputMask';
+import { api } from '../../../../api';
 
 export interface IRegistrationForm {
     phone: string;
@@ -42,6 +43,8 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ setForm }) => {
             password: '',
             confirmPassword: '',
         });
+
+        api.auth.setUserSignup(data)
     })
 
     const changeForm = () => setForm('login');

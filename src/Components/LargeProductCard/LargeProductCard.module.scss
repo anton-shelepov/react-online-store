@@ -3,16 +3,36 @@
 
 .large_product_card {
     display: flex;
+    justify-content: space-between;
 
     border-radius: 25px;
     padding: $large-padding;
     @include card-box-shadow;
 
+    @media screen and (max-width: $extra-large-width) {
+        flex-direction: column; 
+    } 
+    @media screen and (max-width: $small-width) {
+        padding: $large-padding $small-padding; 
+    } 
+
     .product_info {
+        
+        max-width: 400px;
+
+        @media screen and (max-width: $extra-large-width) { 
+            max-width: 100%; 
+        }
+        @media screen and (max-width: $small-width) {
+            padding: $large-padding $small-padding; 
+            margin-top: 40px;
+        } 
 
         .main_parameters {
             display: block;
-            margin-bottom: 15px;
+            margin-bottom: 25px;
+            line-height: 1.4;
+            font-size: 15px;
         }
 
         .buy {
@@ -25,7 +45,9 @@
             margin-top: 25px;
 
             .price {
-                text-align: end;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
                 .discount {
                     opacity: 0.6;
                     font-size: 15px;
@@ -41,13 +63,13 @@
                     }
                 }
 
-                .current_price { 
-                    font-size: 20px;
+                .current_price {
+                    font-size: 21px;
                     margin-bottom: 2px;
                 }
             }
 
-            .buttons { 
+            .buttons {
                 display: flex;
                 align-items: center;
 
@@ -55,6 +77,51 @@
                     margin-right: 10px;
                 }
             }
-        } 
+        }
+
+        .order {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @include card-box-shadow;
+            padding: $large-padding;
+            border-radius: 25px;
+            margin-top: 35px;
+            
+            @media screen and (max-width: $small-width) {
+                padding: $large-padding $small-padding; 
+            } 
+
+            .order_info {
+                display: flex;
+                flex-direction: column;
+                position: relative; 
+
+                font-size: 15px;
+                color: rgba(0, 0, 0, 0.342)(0, 0, 0); 
+
+                .in_stock {
+                    margin-bottom: 5px;
+                }
+
+                .in_stock, .delivery_time {
+                    font-weight: 600;
+                    color: rgb(61, 61, 61);
+                }
+
+                .delivery_time__value, .in_stock__value {
+                    margin-left: 5px;
+                    font-weight: normal;
+                    color:rgb(0, 0, 0)
+                }
+            }
+
+            svg { 
+                fill: rgba(0, 0, 0, 0.199);
+                max-width: 50px;
+                max-height: 50px;
+            }
+        }
     }
 }

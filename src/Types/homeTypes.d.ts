@@ -1,4 +1,4 @@
-import ADD_DISCOUNT_ITEM from "../Redux/Actions/HomeActions/homeActionsTypes"
+import ADD_DISCOUNT_ITEM from "../store/actions/homeActions/homeActionsTypes"
 
 //Home reducer state interface
 export interface IHomeState {
