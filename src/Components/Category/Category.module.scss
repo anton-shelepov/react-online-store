@@ -2,9 +2,7 @@
 @import "./../_Common/variables.scss";
 
 .container { 
-    @media screen and (max-width: $small-width) {
-        flex-direction: row;
-    }
+    
     .catalog_item {
         display: inline-flex;
         flex-direction: column;
@@ -17,26 +15,25 @@
         margin: 10px;
         transition: all 0.3s;
         font-size: 18px;
-        max-width: fit-content;
-
-        @media screen and (max-width: $small-width) { 
-            flex-direction: row; 
-            width: 100%;
-        }
 
         img {
             width: 214px;
         }
 
         .item_name {
-            margin: 10px 0;
+            margin: 5px 0 10px 0;
         }
 
         &:hover {
             transition: all 0.3s;
-            transform: scale(1.03);
+            transform: scale(1.02);
             @include card-box-shadow-hover;
-            filter: brightness(0.98);
+        }
+
+        @media screen and (max-width: $small-width) {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
         }
     }
 }

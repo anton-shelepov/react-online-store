@@ -11,6 +11,7 @@ import MobileBottomNav from "./components/MobileBottomNav/MobileBottomNav";
 import { mediumWidth, smallWidth } from "./components/_assets/BreakpointsConsts";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import ProductsPage from "./pages/ProductsPage/ProductsPage";
+import BasketPage from "./pages/BasketPage/BasketPage";
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
                     <Route path='/catalog' element={<CatalogPage />} />
                     <Route path='/catalog/:products' element={<ProductsPage />} />
                     <Route path='/product/:id' element={<ProductPage />} />
+                    <Route path='/basket' element={<BasketPage />} />
                 </Routes>
             </div>
 

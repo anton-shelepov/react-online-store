@@ -1,7 +1,7 @@
 import React from 'react'
 
 interface Props {
-    id: string;
+    id: string | undefined;
 }
 
 export const GlobalSvgSelector = ({ id }: Props) => {
@@ -264,7 +264,7 @@ export const GlobalSvgSelector = ({ id }: Props) => {
             return (
                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                     width="128.000000pt" height="128.000000pt" viewBox="0 0 128.000000 128.000000"
-                    preserveAspectRatio="xMidYMid meet"> 
+                    preserveAspectRatio="xMidYMid meet">
                     <g transform="translate(0.000000,128.000000) scale(0.100000,-0.100000)"
                         fill="#00000" stroke="none">
                         <path d="M127 1013 c-4 -3 -7 -30 -7 -60 l0 -53 -34 0 c-44 0 -63 -22 -48 -55
@@ -279,9 +279,23 @@ export const GlobalSvgSelector = ({ id }: Props) => {
                         <path d="M910 924 l0 -94 105 0 c58 0 105 3 105 8 0 4 -16 31 -35 60 -38 55
                         -90 96 -143 112 l-32 9 0 -95z"/>
                     </g>
-                </svg>
+                </svg>)
 
-            )
+        case 'arrow':
+            return (
+                <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                    width="64.000000pt" height="64.000000pt" viewBox="0 0 64.000000 64.000000"
+                    preserveAspectRatio="xMidYMid meet">
+                    <metadata>
+                        Created by potrace 1.16, written by Peter Selinger 2001-2019
+                    </metadata>
+                    <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)"
+                        fill="#000000" stroke="none">
+                        <path d="M147 622 c-10 -10 -17 -27 -17 -38 0 -11 52 -70 122 -141 l123 -123
+                        -123 -123 c-126 -126 -139 -149 -104 -180 40 -36 61 -24 215 131 111 111 147
+                        153 147 172 0 19 -36 61 -148 173 -155 155 -179 169 -215 129z"/>
+                    </g>
+                </svg>)
 
         default:
             return null;

@@ -1,0 +1,61 @@
+@import "./../../components/_common/variables.scss";
+@import "./../../components/_common/mixins.scss";
+
+.basket_page {
+    @include defaultContentBlockParams;
+
+    .title {
+        margin-bottom: 25px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between; 
+
+        @media screen and (max-width: $extra-large-width) {
+            flex-direction: column;
+        }
+
+        .info {
+            @include card-box-shadow;
+            border-radius: 25px;
+            padding: $large-padding;
+
+            .summary { 
+                display: flex;
+                justify-content: space-between; 
+                align-items: center;
+
+                margin-bottom: 20px;
+                min-width: 220px;
+
+                h2 {
+                    margin: 0;
+                }
+                .sum {
+                    font-size: 20px;
+                }
+            }
+
+            .products, .discount, .delivery {
+                display: flex;
+                justify-content: space-between;
+                color: rgb(59, 59, 59);
+                margin-bottom: 12px; 
+            }
+
+            .order_btn {
+                margin-top: 10px;
+                @include submitButton;
+            }
+        }
+
+        .products {
+            margin-right: 10px;
+            width: 100%;
+            .title {
+                margin-bottom: 25px;
+            }
+        }
+    }
+}

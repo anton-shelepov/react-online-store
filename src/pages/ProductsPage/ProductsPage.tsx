@@ -23,7 +23,7 @@ const ProductsPage: React.FC<IProductsPage> = (props) => {
                 {
                     products.map((product) => {
                         return (
-                            <ProductCard key={product.id} {...product} />
+                            <ProductCard btnValue='В корзину' btnIcon='basket' key={product.id} {...product} />
                         )
                     })
                 }

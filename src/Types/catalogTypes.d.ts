@@ -24,6 +24,9 @@ export type ProductsItem = {
     price: number;
     discount?: number;
     oldPrice?: number;
+
+    btnValue?: string;
+    btnIcon?: string;
 }
 
 // //Home actions creators types

@@ -14,7 +14,8 @@
 
 // Inputs
 @mixin defaultTextInput {
-    input, textarea {
+    input,
+    textarea {
         border-radius: 20px;
         height: 40px;
         padding: 5px 20px;
@@ -37,7 +38,7 @@
         min-height: 100px;
         transition: box-shadow 0.2s;
         &:focus {
-            transition: box-shadow 0.2s; 
+            transition: box-shadow 0.2s;
         }
     }
 }
@@ -98,4 +99,27 @@
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none;
+}
+
+//Buttons
+@mixin submitButton {
+    font-family: "Montserrat";
+    width: 100%;
+    height: 46px;
+    border-radius: 25px;
+    background: linear-gradient(to right, #cb115f 0, #3e7692 100%) no-repeat;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    @include button-box-shadow;
+    transition: all 0.5s;
+    &:hover {
+        transition: all 0.5s;
+        color: rgb(245, 245, 245);
+        filter: brightness(0.95);
+        font-size: 16px;
+        @include button-box-shadow-hover;
+    }
 }

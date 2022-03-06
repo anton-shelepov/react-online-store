@@ -4,9 +4,22 @@ import { priceFormatter } from '../../utils/commonScripts/PriceFormatter';
 import StaticRating from '../Rating/StaticRating/StaticRating';
 import ButtonWithIcon from '../_common/Buttons/ButtonWithIcon/ButtonWithIcon';
 import FavoriteButton from '../_common/Buttons/FavoriteButton/FavoriteButton';
-import s from './ProductCard.module.scss'; 
+import s from './ProductCard.module.scss';
 
-const ProductCard: React.FC<ProductsItem> = ({ image, title, id, reviews, rating, isInStock, isFavorite, price, discount = 0, oldPrice = 0 }) => { 
+const ProductCard: React.FC<ProductsItem> = ({
+    image,
+    title,
+    id,
+    reviews, 
+    rating,
+    isInStock,
+    isFavorite,
+    price,
+    discount = 0,
+    oldPrice = 0,
+    btnIcon,
+    btnValue,
+}) => {
 
     return (
         <div className={s.product_card}>
@@ -24,20 +37,20 @@ const ProductCard: React.FC<ProductsItem> = ({ image, title, id, reviews, rating
             </div>
             <div className={s.block_right}>
                 <div className={s.price}>
-                    { 
+                    {
                         discount !== 0 && (
                             <>
                                 <span className={s.discount}>{`-${discount}%`}</span>
                                 <span className={s.old_price}>{priceFormatter(oldPrice)}</span>
-                            </> 
-                        ) 
+                            </>
+                        )
                     }
                     <p className={s.current_price}>{priceFormatter(price)}</p>
                 </div>
 
                 <div className={s.buttons}>
                     <FavoriteButton isFavorite={isFavorite} />
-                    <ButtonWithIcon content='В корзину' icon='basket' />
+                    <ButtonWithIcon content={btnValue} icon={btnIcon} />
                 </div>
             </div>
         </div>
