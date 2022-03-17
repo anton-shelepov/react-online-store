@@ -1,0 +1,38 @@
+@import "./../../../components/_common/variables.scss";
+@import "./../../../components/_common/mixins.scss";
+
+.products_edit {
+    @include adminContentBlockParams;
+    .title {
+        @include adminTitleParams;
+    }
+    .container {
+        @include card-box-shadow;
+        border-radius: 25px;
+        padding: 25px;
+        .category_select {
+            max-width: 500px;
+            .categories_title {
+                margin-bottom: 25px;
+            }
+        }
+        .products {
+            .products_title {
+                margin: 25px 0;
+            }
+            .products_info {
+                display: flex;
+                justify-content: space-between;
+                .products_items {
+                    flex-grow: 1;
+                }
+                .product_create {
+                    @include card-box-shadow;
+                    border-radius: 25px;
+                    padding: 25px;
+                    margin-left: 15px; 
+                }
+            }
+        }
+    }
+}

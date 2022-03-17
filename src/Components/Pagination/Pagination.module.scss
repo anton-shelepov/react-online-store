@@ -1,0 +1,82 @@
+@import "./../_common/variables.scss";
+@import "./../_common/mixins.scss";
+
+.pagination {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @include card-box-shadow;
+    padding: 25px;
+    border-radius: 25px;
+    margin-top: 15px;
+    .nav {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        span {
+            line-height: 0;
+            cursor: pointer;
+        }
+
+        .start,
+        .prev,
+        .next,
+        .end {
+            svg {
+                height: 17px;
+                width: 17px;
+            }
+        }
+        .next,
+        .end {
+            transition: all 0.2s;
+            svg {
+                transform: rotate(270deg);
+            }
+            &:hover {
+                transform: translateX(2px);
+            }
+        }
+        .start,
+        .prev {
+            transition: all 0.2s;
+            svg {
+                transform: rotate(90deg);
+            }
+            &:hover {
+                transform: translateX(-2px);
+            }
+        }
+        @mixin backgroundPaginateNumber($background) {
+            content: "";
+            background: $background;
+            border-radius: 50%;
+            height: 45px;
+            width: 45px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+        .page_number {
+            position: relative;
+            padding: 20px;
+
+            z-index: 0;
+            &:not(.active) {
+                &:hover {
+                    &:after {
+                        @include backgroundPaginateNumber(#f8f4fa);
+                    }
+                }
+            }
+        }
+        .active {
+            color: white;
+            &:after {
+                @include backgroundPaginateNumber(#72517f);
+            }
+        }
+    }
+}

@@ -16,7 +16,7 @@
     .review_item {
         @include card-box-shadow;
         border-radius: 15px;
-        background: linear-gradient(to right, #72517f0e 0, #3e779f07 100%);
+        border: 1px #72517f38 dashed;
         padding: 25px;
         line-height: 1.75;
         margin-top: 25px;

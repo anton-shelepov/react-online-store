@@ -1,26 +1,33 @@
-import { all, call, put, takeLatest } from "redux-saga/effects"; 
-import { api } from "../../../../api";
+import { api } from './../../../../api/index';
+import { userSigninSuccess, userSigninFailure, userSignupRequest, userSignupSuccess, userSignupFailure, userSigninRequest } from './../../../actions/authActions/authActions';
+import { call, put, StrictEffect, takeLatest } from "redux-saga/effects";
+import { IUserSigninRequest, IUserSignupRequest, USER_SIGNIN_REQUEST, USER_SIGNUP_REQUEST } from "../../../actions/authActions/authActionsTypes";
+import { AxiosResponse } from 'axios';
 
 
-function* fetchUserSignin() {
-    // try {
-    //     const response = yield call(api.auth.setUserSignin());
-    //     yield put(
-    //         fetchPostsSuccess({
-    //             jwt_token: response.data
-    //         })
-    //     );
-    // } catch (e) {
-    //     yield put(
-    //         fetchPostsFailure({
-    //             error: e.message
-    //         })
-    //     );
-    // }
+function* userSigninRequestSaga({ formData }: IUserSigninRequest) {
+    try {
+        const response: AxiosResponse = yield call(api.auth.userSignin, formData) 
+        yield put(userSigninSuccess(response.data.access_token));
+
+    } catch (error) {
+        yield put(userSigninFailure(error));
+    }
 }
 
-function* authSaga() {
-    // yield all([takeLatest(FETCH_POST_REQUEST, fetchPostsSaga)]);
+function* userSignupRequestSaga({ formData }: IUserSignupRequest) {
+    try {
+        const response: AxiosResponse = yield call(api.auth.userSignup, formData)
+        yield put(userSignupSuccess(response.data));
+
+    } catch (error) {
+        yield put(userSignupFailure(error));
+    }
 }
 
-export default authSaga;
+function* authSaga(): Generator<StrictEffect> {
+    yield takeLatest(USER_SIGNIN_REQUEST, userSigninRequestSaga)
+    yield takeLatest(USER_SIGNUP_REQUEST, userSignupRequestSaga)
+}
+
+export default authSaga

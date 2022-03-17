@@ -17,7 +17,7 @@ export const profileEditSchema = yup.object().shape({
     address: yup.string(),
     phone: yup.string().test(
         'phone-is-valid',
-        function (value, { createError, path }) { 
+        function (value, { createError, path }) {
             return (value?.charAt(value.length - 1)) === '_'
                 ? createError({
                     message: 'Введите корректный телефон',
@@ -74,7 +74,7 @@ export const registrationSchema = yup.object().shape({
         .matches(/^[а-яa-zА-ЯA-Z-]{0,}\s[а-яa-zА-ЯA-Z-]{1,}(\s[а-яa-zА-ЯA-Z-]{1,})?$/, nameMustBeCorrect),
     phone: yup.string().test(
         'phone-is-valid',
-        function (value, { createError, path }) { 
+        function (value, { createError, path }) {
             return (value?.charAt(value.length - 1)) === '_'
                 ? createError({
                     message: 'Введите корректный телефон',
@@ -92,19 +92,4 @@ export const registrationSchema = yup.object().shape({
         .string()
         .required(requiredInput)
         .oneOf([yup.ref("password")], passwordsMustMatch),
-})
-
-
-
-
-
-
-
-// yup.addMethod<StringSchema>(yup.string, "minimum", function(number: number, errorMessage: string) {
-//     return this.test(`test-from`, errorMessage, function(value) {
-//         const { path, createError } = this;
-//         return (
-//             (value === '' || value!.length > number) || createError({path, message: errorMessage})
-//         )
-//     })
-// }) 
+}) 

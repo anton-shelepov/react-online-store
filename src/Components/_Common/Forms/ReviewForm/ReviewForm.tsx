@@ -36,7 +36,12 @@ const ReviewForm: React.FC = () => {
     }
 
     const onSubmit = handleSubmit((data) => {
-        console.log(data, rating)
+
+        const submitData = { 
+            ...data, 
+            rating, 
+        }
+        console.log(submitData)
         reset({
             comment: '',
             dignity: '',

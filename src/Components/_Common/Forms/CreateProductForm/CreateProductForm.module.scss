@@ -1,0 +1,16 @@
+.create_product_form {
+    .form_title {
+        margin-bottom: 25px; 
+    }
+    .specs {
+        margin-top: 35px;
+        h3 {
+            margin-bottom: 15px;
+        }
+        .specs_groups_items {
+            .specs_item {
+                display: flex;
+            }
+        }
+    }
+}

@@ -1,25 +1,15 @@
+import { ISignupRequestData, ISigninRequestData } from './auth-api-types.d';
 import { instance } from ".."
 
-interface IAuth {
-    email?: string,
-    password?: string,
-}
+const basePath = '/auth'
 
 export const auth = {
 
-    path: '/auth',
-
-    setUserSignin({ email, password }: IAuth) {
-        return instance.post(`${this.path}/signin`, {
-            email,
-            password
-        })
+    userSignin(formData: ISigninRequestData) {
+        return instance.post(`${basePath}/signin`, { ...formData })
     },
 
-    setUserSignup({ email, password }: IAuth) {
-        return instance.post(`${this.path}/signup`, {
-            email,
-            password
-        })
+    userSignup(formData: ISignupRequestData) {
+        return instance.post(`${basePath}/signup`, { ...formData })
     }
 } 

@@ -7,14 +7,15 @@ import SubmitButton from '../../Buttons/SubmitButton/SubmitButton';
 import { Dispatch, SetStateAction } from 'react';
 import NumberFormat from 'react-number-format';
 import TextInputMask from '../../Inputs/TextInput/TextInputMask';
-import { api } from '../../../../api';
+import { useAppDispatch } from '../../../../utils/hooks/hooks';
+import { userSignupRequest } from '../../../../store/actions/authActions/authActions';
 
 export interface IRegistrationForm {
-    phone: string;
     email: string,
-    fullName: string,
     password: string,
     confirmPassword: string,
+    phone?: string;
+    fullName?: string,
 }
 
 type RegistrationFormProps = {
@@ -34,6 +35,8 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ setForm }) => {
         mode: "onBlur",
     })
 
+    const dispatch = useAppDispatch()
+
     const onSubmit = handleSubmit((data) => {
         console.log(data)
         reset({
@@ -44,7 +47,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ setForm }) => {
             confirmPassword: '',
         });
 
-        api.auth.setUserSignup(data)
+        dispatch(userSignupRequest(data))
     })
 
     const changeForm = () => setForm('login');

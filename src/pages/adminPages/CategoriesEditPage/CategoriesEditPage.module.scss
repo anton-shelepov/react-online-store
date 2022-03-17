@@ -1,0 +1,54 @@
+@import "../../../components/_common/variables.scss";
+@import "../../../components/_common/mixins.scss";
+
+.categories_edit_page {
+    @include adminContentBlockParams;
+    .title {
+        @include adminTitleParams;
+    }
+    .container {
+        @include card-box-shadow;
+        padding: 25px;
+        display: flex;
+        justify-content: space-between;
+        .categories_list {
+            width: 100%;
+            .categories_list__title {
+                margin-bottom: 25px;
+            }
+            .category_item {
+                margin-bottom: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 25px;
+                border-radius: 25px;
+                @include card-box-shadow;
+
+                .category_name,
+                .category_link_name,
+                .products_count {
+                    margin-left: 10px;
+
+                    &:last-child {
+                        margin-left: 25px;
+                    }
+                }
+                .last_update {
+                    margin: 0 25px;
+                    font-size: 16px;
+                    font-weight: 300;
+                }
+            }
+        }
+        .create_new_category {
+            border: 1px solid rgba(0, 0, 0, 0.096);
+            @include card-box-shadow;
+            border-radius: 25px;
+            margin-top: 47px;
+            min-height: 100%;
+            min-width: 350px;
+            margin-left: 25px;
+        }
+    }
+}

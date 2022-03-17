@@ -1,18 +1,16 @@
-import { createStore, applyMiddleware, combineReducers } from "redux";
+import { createStore, applyMiddleware, combineReducers, compose } from "redux";
 import authReducer from "./reducers/authReducer";
 import catalogReducer from "./reducers/catalogReducer";
 import homeReducer from "./reducers/homeReducer";
 import createSagaMiddleware from 'redux-saga'
-import { rootSaga } from "./reduxSaga/rootSaga";
 import productReducer from "./reducers/productReducer";
 import basketReducer from "./reducers/basketReducer";
+import rootSaga from "./reduxSaga/rootSaga";
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 
 export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch 
-
-
-const sagaMiddleware = createSagaMiddleware()
 
 const rootReducer = combineReducers({
     home: homeReducer,
@@ -20,9 +18,11 @@ const rootReducer = combineReducers({
     auth: authReducer,
     product: productReducer,
     basket: basketReducer,
-})
+}) 
 
-const store = createStore( rootReducer, applyMiddleware(sagaMiddleware) ) 
+const sagaMiddleware = createSagaMiddleware()
+
+const store = createStore( rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)) ) 
 
 sagaMiddleware.run(rootSaga)
 

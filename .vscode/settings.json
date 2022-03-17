@@ -5,5 +5,7 @@
         "Modificators",
         "unselectable",
         "Unselectable"
-    ]
+    ],
+    "workbench.colorTheme": "React Theme",
+    
 }

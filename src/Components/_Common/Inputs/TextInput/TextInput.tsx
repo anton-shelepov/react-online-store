@@ -1,6 +1,5 @@
 import s from "./TextInput.module.scss";
 import classNames from 'classnames'
-import { useState } from "react";
 
 interface IInputProps {
     required?: boolean;

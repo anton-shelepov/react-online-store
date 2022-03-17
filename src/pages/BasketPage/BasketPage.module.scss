@@ -8,18 +8,12 @@
         margin-bottom: 25px;
     }
 
-    .container {
-        display: flex;
-        justify-content: space-between; 
-
-        @media screen and (max-width: $extra-large-width) {
-            flex-direction: column;
-        }
-
+    .container { 
         .info {
             @include card-box-shadow;
             border-radius: 25px;
             padding: $large-padding;
+            margin-top: 25px; 
 
             .summary { 
                 display: flex;
@@ -45,8 +39,8 @@
             }
 
             .order_btn {
-                margin-top: 10px;
-                @include submitButton;
+                margin-top: 20px;
+                @include submitButton; 
             }
         }
 

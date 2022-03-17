@@ -7,29 +7,28 @@ import FavoriteButton from '../_common/Buttons/FavoriteButton/FavoriteButton';
 import s from './ProductCard.module.scss';
 
 const ProductCard: React.FC<ProductsItem> = ({
-    image,
+    images,
     title,
     id,
-    reviews, 
     rating,
     isInStock,
     isFavorite,
     price,
-    discount = 0,
-    oldPrice = 0,
+    discount,
     btnIcon,
     btnValue,
-}) => {
+    _count,
+}) => { 
 
     return (
         <div className={s.product_card}>
             <div className={s.block_left}>
-                <img src={image} className={s.product_image} alt='product' />
+                <img src={`http://localhost:3001/uploads/images/${images[0]?.fileName}`} className={s.product_image} alt='product' />
                 <div className={s.product_info}>
                     <Link to={`/product/${id}`}><h3 className={s.title}>{title}</h3></Link>
                     <div className={s.additional}>
                         <div className={s.rating}>
-                            <StaticRating reviews={reviews} rating={rating} />
+                            <StaticRating reviews={_count?.reviews} rating={rating} /> 
                         </div>
                         <p className={s.in_stock}>В наличии: {isInStock ? "есть" : "нет"}</p>
                     </div>
@@ -37,11 +36,12 @@ const ProductCard: React.FC<ProductsItem> = ({
             </div>
             <div className={s.block_right}>
                 <div className={s.price}>
-                    {
-                        discount !== 0 && (
+                    { 
+                        discount && (
                             <>
+                                
                                 <span className={s.discount}>{`-${discount}%`}</span>
-                                <span className={s.old_price}>{priceFormatter(oldPrice)}</span>
+                                <span className={s.old_price}>{priceFormatter(price + (price * (discount/100)))}</span>
                             </>
                         )
                     }

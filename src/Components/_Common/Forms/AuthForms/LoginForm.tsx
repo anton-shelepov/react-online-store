@@ -5,12 +5,12 @@ import TextInput from '../../Inputs/TextInput/TextInput';
 import { loginSchema } from '../FormsSchemas';
 import SubmitButton from '../../Buttons/SubmitButton/SubmitButton';
 import { Dispatch, SetStateAction } from 'react';
-import { setUserAuth } from '../../../../store/actions/authActions/authActions';
 import { useAppDispatch } from '../../../../utils/hooks/hooks';
-import { api } from '../../../../api';
+import { userSigninRequest } from '../../../../store/actions/authActions/authActions';
 
 export interface ILoginForm {
-    
+    email: string;
+    password: string
 }
 
 type LoginFormProps = {
@@ -31,9 +31,8 @@ const LoginForm: React.FC<LoginFormProps> = ({setForm}) => {
         mode: "onBlur",
     })
 
-    const onSubmit = handleSubmit((data) => { 
-        dispatch(setUserAuth())
-        // api.auth.setUserAuth(data)
+    const onSubmit = handleSubmit(({email, password}: ILoginForm) => { 
+        dispatch(userSigninRequest({email, password}))
         reset();
     })
 

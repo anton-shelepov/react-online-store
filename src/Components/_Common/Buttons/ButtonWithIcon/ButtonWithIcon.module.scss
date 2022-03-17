@@ -23,7 +23,7 @@
         opacity: 0;
         position:absolute;
         top: 5px;
-        left: 40%; 
+        left: calc(50% - 8px); 
         max-width: 17px;
         max-height: 17px;
         transition: all 0.15s; 

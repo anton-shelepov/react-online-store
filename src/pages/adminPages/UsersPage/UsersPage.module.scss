@@ -1,0 +1,8 @@
+@import './../../../components/_common/variables.scss';
+@import './../../../components/_common/mixins.scss';
+
+.users_page {
+    .title {
+        @include adminTitleParams;
+    }
+}

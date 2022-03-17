@@ -123,3 +123,24 @@
         @include button-box-shadow-hover;
     }
 }
+
+// Admin panel
+@mixin adminContentBlockParams {
+    margin-left: 315px;
+    margin-top: 80px; 
+}
+
+@mixin adminTitleParams {
+    @include card-box-shadow;
+    width: 100%; 
+    z-index: 99;
+    position: fixed;
+    height: 64px;
+    line-height: 0.5;
+    top: 0;
+    left: 300px;
+    padding: 25px; 
+    background-color: #72517f;
+    color: white;
+    box-shadow: 0px 7px 8px 0px rgba(34, 60, 80, 0.3);
+}

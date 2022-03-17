@@ -1,0 +1,183 @@
+
+
+@jwt_token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoiMTJAbWFpbC5ydSIsImlhdCI6MTY0NzQyNjkzNCwiZXhwIjoxNjQ3NDg2OTM0fQ.t5LYxdCJjQi9CjIGuhtYwm7mCdlCFbNmIrAZxMwE0Lc
+
+// CREATE NEW CATEGORY 
+POST http://localhost:3001/categories/create 
+content-type: application/json
+Authorization: {{jwt_token}}
+
+{
+    "categoryName": "laptops",
+    "categoryCatalogName": "Ноутбуки",
+    "image": "asd",
+    "icon": "asd"
+} 
+
+###
+// CREATE NEW PRODUCT
+POST http://localhost:3001/products/create
+content-type: application/json
+Authorization: {{jwt_token}}
+
+{
+    "title": "Ноутбук",
+    "categoryName": "laptops",
+    "mainSpecs": "Хороший ноутбук",
+    "isInStock": true,
+    "price": 100000,
+    "specs": [ 
+        {
+            "specGroupTitle": "Внешний вид",
+            "specGroupValues": [
+                {
+                    "value": ["Цвет верхней крышки", "Серый"]
+                },
+                {
+                    "value": ["Материал крышки", "Аллюминий"]
+                },
+                {
+                    "value": ["Материал корпуса", "Магниевый сплав"]
+                },
+                {
+                    "value": ["Цвет верхней крышки", "Серый"]
+                },
+                {
+                    "value": ["Материал крышки", "Аллюминий"]
+                },
+                {
+                    "value": ["Материал корпуса", "Магниевый сплав"]
+                }
+            ] 
+        },
+        {
+            "specGroupTitle": "Внешний вид2",
+            "specGroupValues": [
+                {
+                    "value": ["Цвет верхней крышки2", "Серый2"]
+                },
+                {
+                    "value": ["Материал крышки2", "Аллюминий2"]
+                },
+                {
+                    "value": ["Материал корпуса2", "Магниевый сплав2"]
+                }
+            ] 
+        }
+    ]
+}
+
+### 
+// GET ONE PRODUCT
+GET http://localhost:3001/products/1
+content-type: application/json 
+
+### 
+// GET PRODUCT IMAGES
+GET http://localhost:3001/products/1/images
+content-type: application/json 
+
+###
+// CREATE NEW REVIEW
+POST  http://localhost:3001/reviews/create
+content-type: application/json
+Authorization: {{jwt_token}}
+
+{
+    "productId": 2,
+    "usedTerm": "Менее месяца",
+    "dignity": "Хорошо",
+    "flaws": "Плохо",
+    "comment": "Комментарий",
+    "rating": 5
+} 
+
+###
+// DELETE REVIEW
+DELETE  http://localhost:3001/reviews/delete
+content-type: application/json
+Authorization: {{jwt_token}}
+
+{
+    "reviewId": 3,
+    "productId": 2
+} 
+
+###
+// REGISTRATE NEW USER
+POST  http://localhost:3001/auth/signup
+content-type: application/json
+
+{
+    "email": "12@mail.ru",
+    "password": "123123123"
+} 
+
+###
+// SIGNIN
+POST  http://localhost:3001/auth/signin
+content-type: application/json
+
+{
+    "email": "gatwasdbar3eddasdmadsdzxDc2da@gmail.com",
+    "password": "123d123123"
+} 
+
+###
+// UPDATE PROFILE
+PATCH  http://localhost:3001/profile/update
+content-type: application/json
+Authorization: {{jwt_token}}
+
+{
+    "email": "asdasdasdzx2c2@mail.ru",
+    "fullName": "anton",
+    "address": "123",
+    "phone": "89243363738",
+    "gender": "male",
+    "oldPassword": "1231231223",
+    "newPassword": "12312312asdasdasd23"
+} 
+
+###
+// GET PROFILE
+GET  http://localhost:3001/profile
+content-type: application/json
+Authorization: {{jwt_token}}
+
+
+###
+// ADD PRODUCT IN USER BASKET
+POST  http://localhost:3001/basket/add
+content-type: application/json
+Authorization: {{jwt_token}}
+
+{
+    "productId": 1
+}
+
+###
+// GET ALL PRODUCTS IN USER BASKET
+GET  http://localhost:3001/basket
+content-type: application/json
+Authorization: {{jwt_token}}
+
+###
+// DELETE PRODUCT FROM BASKET
+DELETE  http://localhost:3001/basket/remove
+content-type: application/json
+Authorization: {{jwt_token}}
+
+{
+    "productId": 1
+}
+
+###
+// ADD PRODUCT IN USER FAVORITES
+POST  http://localhost:3001/favorites/add
+content-type: application/json
+Authorization: {{jwt_token}}
+
+{
+    "productId": 1
+}
