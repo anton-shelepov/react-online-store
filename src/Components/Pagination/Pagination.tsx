@@ -57,7 +57,7 @@ const Pagination: React.FC<IPagination> = ({ pageSize, productsCount, queryPage 
                 </span>
                 {
                     pagesNumbers.map(pageNumber => (
-                            <span className={`${s.page_number} ${pageNumber === currentPage ? s.active : ''}`} onClick={onNumberPageChange}>{pageNumber}</span>
+                            <span key={pageNumber} className={`${s.page_number} ${pageNumber === currentPage ? s.active : ''}`} onClick={onNumberPageChange}>{pageNumber}</span>
                         ))
                 }
                 <span className={s.next} onClick={onNextPageChange}>

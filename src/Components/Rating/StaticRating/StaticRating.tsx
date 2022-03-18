@@ -20,7 +20,7 @@ const StaticRating: React.FC<IRating> = ({ reviews, rating }) => {
                 }
 
                 return (
-                    <StarIcon fill={fill()} />
+                    <StarIcon key={index} fill={fill()} />
                 )
             })}
             <span>{reviews}</span>

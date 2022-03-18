@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ProductsItem } from '../../types/catalogTypes';
-import { priceFormatter } from '../../utils/commonScripts/PriceFormatter';
+import { getImageSrc, priceFormatter } from '../../utils/scripts/scripts';
 import StaticRating from '../Rating/StaticRating/StaticRating';
 import ButtonWithIcon from '../_common/Buttons/ButtonWithIcon/ButtonWithIcon';
 import FavoriteButton from '../_common/Buttons/FavoriteButton/FavoriteButton';
@@ -19,11 +19,10 @@ const ProductCard: React.FC<ProductsItem> = ({
     btnValue,
     _count,
 }) => { 
-
     return (
         <div className={s.product_card}>
             <div className={s.block_left}>
-                <img src={`http://localhost:3001/uploads/images/${images[0]?.fileName}`} className={s.product_image} alt='product' />
+                <img src={images.length ? getImageSrc(images[0].fileName) : undefined} className={s.product_image} alt='product' />
                 <div className={s.product_info}>
                     <Link to={`/product/${id}`}><h3 className={s.title}>{title}</h3></Link>
                     <div className={s.additional}>

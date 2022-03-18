@@ -1,3 +1,4 @@
+import { getImageSrc } from '../../utils/scripts/scripts';
 import s from './Discounts.module.scss';
 
 interface DiscountItem {
@@ -15,10 +16,10 @@ const Discounts: React.FC<Props> = ({ discounts }) => {
         <div className={s.discounts}>
             {discounts.map(item => {
                 return (
-                    <div key={item.title} className={s.discount_item}>
+                    <div key={item.title} className={s.discount_item} style={{backgroundImage: getImageSrc('das')}}>
                         <h3>{item.title}</h3>
-                        <span>{item.description}</span>
-                        <span>{item.discountSize}</span>
+                        <span className={s.description}>{item.description}</span>
+                        <span className={s.discount}>{item.discountSize}</span>
                     </div>
                 )
             })}

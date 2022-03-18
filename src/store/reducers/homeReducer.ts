@@ -22,6 +22,16 @@ const initialState: IHomeState = {
             description: "Зимняя распродажа производителя",
             discountSize: "Скидки до 50%",
         },
+        {
+            title: "Компьютеры AMD",
+            description: "Зимняя распродажа производителя",
+            discountSize: "Скидки до 50%",
+        },
+        {
+            title: "Компьютеры AMD",
+            description: "Зимняя распродажа производителя",
+            discountSize: "Скидки до 50%",
+        },
     ], 
 } 
 

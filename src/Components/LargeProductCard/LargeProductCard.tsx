@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import MediaQuery from 'react-responsive';
 import { ProductInfo } from '../../types/productTypes';
-import { priceFormatter } from '../../utils/commonScripts/PriceFormatter';
+import { priceFormatter } from '../../utils/scripts/scripts';
 import ProductGallery from '../ProductGallery/ProductGallery';
 import StaticRating from '../Rating/StaticRating/StaticRating';
 import MainSlider from '../Slider/Slider';

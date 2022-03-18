@@ -1,21 +1,35 @@
-@import './../../Components/_Common/variables.scss';
+@import "./../../Components/_Common/variables.scss";
 
-.catalog { 
-    width: $sidebarWidth; 
+.catalog {
+    width: $sidebarWidth;
     white-space: nowrap;
     background-color: white;
     padding: 25px;
-    border-radius: 15px; 
-    margin-right: 10px; 
+    border-radius: 15px;
+    margin-right: 10px;
+
+    .title {
+        margin-bottom: 25px;
+    }
 
     @include block-box-shadow;
 
-    .categories_list {
-        line-height: 1.8;
+    .categories_list { 
+        padding-left: 20px; 
         li {
             list-style-type: none;
+            margin-bottom: 15px;
+            a {
+                display: flex;
+                align-items: center;
+                img {
+                    margin-right: 5px;
+                    width: 30px;
+                    height: 30px;
+                }
+            }
         }
-    } 
+    }
 
     @media screen and (max-width: $medium-width) {
         border-radius: 0 15px 15px 0;

@@ -12,7 +12,7 @@ export interface ICatalogState {
 // Category state components types
 export type CategoriesItem = {
     image: string,
-    icon?: string,
+    icon: string,
     categoryCatalogName: string,
     categoryName: string,
     productsCount: number,
