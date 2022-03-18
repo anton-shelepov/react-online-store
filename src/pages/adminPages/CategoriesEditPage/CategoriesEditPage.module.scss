@@ -42,7 +42,8 @@
             }
         }
         .create_new_category {
-            border: 1px solid rgba(0, 0, 0, 0.096);
+            border: 1px dashed #72517f46;
+            background-color: #72517f17;
             @include card-box-shadow;
             border-radius: 25px;
             margin-top: 47px;

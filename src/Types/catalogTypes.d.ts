@@ -6,14 +6,21 @@ export interface ICatalogState {
     productsCount: number,
     pageSize: number,
     isLoading: boolean,
+    errorMessage: string,
 }
 
 // Category state components types
 export type CategoriesItem = {
     image: string,
     icon?: string,
-    itemName: string,
-    link: string,
+    categoryCatalogName: string,
+    categoryName: string,
+    productsCount: number,
+    createdAt: string,
+    updatedAt: string,
+    _count: {
+        products: number
+    }
 }
 
 // Products state components types

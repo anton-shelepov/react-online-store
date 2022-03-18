@@ -1,7 +1,7 @@
 export interface ICreateCategoryRequestData {
     image: any
     icon: any
-    linkName: string
+    categoryCatalogName: string
     categoryName: string
 }
 

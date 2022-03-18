@@ -1,29 +1,35 @@
+import { useEffect } from 'react';
+import { ActionMeta, SingleValue } from 'react-select';
 import ProductCard from '../../../components/ProductCard/ProductCard';
 import CreateProductForm from '../../../components/_common/Forms/CreateProductForm/CreateProductForm';
 import DefaultSelect from '../../../components/_common/Selects/DefaultSelect';
-import { fetchCategoryProductsRequest } from '../../../store/actions/catalogActions/catalogActions';
+import { fetchCategoriesRequest, fetchCategoryProductsRequest } from '../../../store/actions/catalogActions/catalogActions';
 import { useAppDispatch, useAppSelector } from '../../../utils/hooks/hooks';
 import s from './ProductsEditPage.module.scss';
 
 interface IProductsEditPage { }
 
-const ProductsEditPage: React.FC<IProductsEditPage> = (props) => {
-
-    const options = [
-        { value: 'popularity', label: 'Популярности' },
-        { value: 'rating', label: 'Рейтингу' },
-        { value: 'priceMax', label: 'Цене ⇡' },
-        { value: 'priceMin', label: 'Цене ⇣' },
-        { value: 'discount', label: 'Скидке' },
-    ];
+const ProductsEditPage: React.FC<IProductsEditPage> = (props) => { 
 
     const dispatch = useAppDispatch()
 
     const products = useAppSelector(store => store.catalog.categoryProducts)
 
-    const onSelectChange = () => {
-        dispatch(fetchCategoryProductsRequest('laptops'))
-    }
+    const categories = useAppSelector(store => store.catalog.categories)
+
+    const onSelectChange = (e: any)=> {
+        dispatch(fetchCategoryProductsRequest(e.value))
+    } 
+
+    useEffect(() => {
+        dispatch(fetchCategoriesRequest())
+    }, [dispatch])
+
+    const options = categories.map(category => ({
+        value: category.categoryName, 
+        label: category.categoryCatalogName,
+    }))
+
     return (
         <div className={s.products_edit}>
             <h2 className={s.title}>Редактирование товаров</h2>

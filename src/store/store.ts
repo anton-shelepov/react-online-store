@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware, combineReducers, compose } from "redux";
+import { createStore, applyMiddleware, combineReducers } from "redux";
 import authReducer from "./reducers/authReducer";
 import catalogReducer from "./reducers/catalogReducer";
 import homeReducer from "./reducers/homeReducer";
@@ -7,6 +7,7 @@ import productReducer from "./reducers/productReducer";
 import basketReducer from "./reducers/basketReducer";
 import rootSaga from "./reduxSaga/rootSaga";
 import { composeWithDevTools } from 'redux-devtools-extension';
+import usersReducer from "./reducers/usersReducer";
 
 
 export type RootState = ReturnType<typeof store.getState>
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
     auth: authReducer,
     product: productReducer,
     basket: basketReducer,
+    users: usersReducer,
 }) 
 
 const sagaMiddleware = createSagaMiddleware()

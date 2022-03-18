@@ -22,12 +22,12 @@ import HomeEditPage from "./pages/adminPages/HomeEditPage/HomeEditPage";
 function App() {
 
     const pathname = useLocation().pathname
-    const role = 'ADMIN'
+    const role = 'USER'
 
     return (
         <div className={s.app}>
 
-            {/* {role === 'USER' && (
+            {role === 'USER' && (
                 <>
                     <Header />
 
@@ -54,9 +54,9 @@ function App() {
                         <MobileBottomNav />
                     </MediaQuery>
                 </>)
-            } */}
+            }
 
-            {
+            {/* {
                 role === 'ADMIN' && (
                     <>
                         <AdminSidebar />
@@ -69,7 +69,7 @@ function App() {
                         </Routes>
                     </>
                 )
-            }
+            } */}
 
 
         </div >

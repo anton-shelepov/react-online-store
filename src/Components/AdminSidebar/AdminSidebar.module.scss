@@ -4,18 +4,18 @@
 .admin_sidebar {
     background-color: #6c4e77;
     box-shadow: 5px 65px 8px 0px rgba(34, 60, 80, 0.37);
-    max-width: $sidebarWidth; 
+    max-width: $sidebarWidth;
     white-space: nowrap;
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     z-index: 999;
-    
+
     .logo {
         background-color: #72517f;
         margin-bottom: 30px;
-        box-shadow: 0px 7px 8px -8px rgba(34, 60, 80, 0.3); 
+        box-shadow: 0px 7px 8px -8px rgba(34, 60, 80, 0.3);
         svg {
             margin: 7px 0 3px 5px;
             max-width: 180px;
@@ -26,15 +26,22 @@
         list-style-type: none;
         padding-left: 10px;
         .nav_item {
-            @include card-box-shadow;
             font-weight: 300;
-            border-radius: 25px 0 0 25px;
             margin: 20px 0;
             border: 1px dotted #ffffff33;
             cursor: pointer;
             font-size: 15px;
+            border-radius: 25px 0 0 25px;
+            transition: all 0.2s ease-in;
+            &:not(.active) {
+                &:hover {
+                    @include card-box-shadow; 
+                    background-color: #664970;
+                }
+            }
             a {
                 display: flex;
+                border-radius: 25px 0 0 25px;
                 align-items: center;
                 justify-content: end;
                 padding: 15px 20px;
@@ -49,7 +56,7 @@
         }
     }
     .active {
-        background-color: #4b3353;
+        background-color: #5d4166;
         @include card-box-shadow-hover;
     }
 }

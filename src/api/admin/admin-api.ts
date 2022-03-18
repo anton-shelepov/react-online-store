@@ -1,18 +1,23 @@
 import { ICreateCategoryRequestData } from './admin-api.d';
 import { instance } from ".."
-import axios from 'axios';
 
 const basePath = '/categories'
 
 export const admin = {
 
-    createCategory({ categoryName, linkName, image, icon }: ICreateCategoryRequestData) {
-        axios.all([
-            instance.post(`${basePath}/create`, ({ categoryName, linkName })),
-            instance.post(`${basePath}/upload-images`, ({ image, icon }))
-        ]).then(axios.spread((response1, response2) => {
-            return { response1, response2 }
-        }))
+    createCategory({ categoryName, categoryCatalogName, image, icon }: ICreateCategoryRequestData) {
+        const data = new FormData()
+        data.append('files', image[0])
+        data.append('files', icon[0])
+        data.append('categoryName', categoryName)
+        instance.post(`${basePath}/create`, ({ categoryName, categoryCatalogName }))
+            .then(() => {
+                return instance.post(`${basePath}/upload-images`, data, {
+                    headers: {
+                        'content-type': 'multipart/form-data'
+                    }
+                })
+            })
     },
 
     createProduct(formData: ICreateCategoryRequestData) {

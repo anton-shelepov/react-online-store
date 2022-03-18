@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 import { api } from '../../../../api';
 import { useAppDispatch } from '../../../../utils/hooks/hooks';
 import SubmitButton from '../../Buttons/SubmitButton/SubmitButton';
+import FileInput from '../../Inputs/FileInput/FileInput';
 import TextInput from '../../Inputs/TextInput/TextInput';
 import s from './CreateCategoryForm.module.scss';
 
@@ -12,8 +13,8 @@ interface ICreateCategoryFormProps {
 interface ICreateCategoryForm { 
     image: any
     icon: any
-    linkName: string
     categoryName: string
+    categoryCatalogName: string
 }
 
 const CreateCategoryForm: React.FC<ICreateCategoryFormProps> = (props) => {
@@ -37,13 +38,11 @@ const CreateCategoryForm: React.FC<ICreateCategoryFormProps> = (props) => {
         <form className={s.create_category} onSubmit={onSubmit}>
             <h3 className={s.title}>Создать новую категорию</h3>
             <div className={s.personal}>
-                <TextInput register={register} errors={errors} name="linkName" label="Ссылочное наименование" />
-                <TextInput register={register} errors={errors} name="categoryName" label="Название категории" />
+                <TextInput register={register} errors={errors} name="categoryName" label="Ссылочное наименование" />
+                <TextInput register={register} errors={errors} name="categoryCatalogName" label="Название категории" />
                 <div className={s.upload_images}>
-                    <span className={s.upload_image__title}>Добавить картинку</span>
-                    <input {...register('image')} type='file' />
-                    <span className={s.upload_icon__title}>Добавить иконку</span>
-                    <input {...register('icon')} type='file' />
+                    <FileInput register={register} label="Добавить картинку" name="image" id="image" />
+                    <FileInput register={register} label="Добавить иконку" name="icon" id="icon" />
                 </div>
             </div>
             <SubmitButton value="Создать категорию" />

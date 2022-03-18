@@ -2,21 +2,21 @@ import { ICreateCategoryRequestData } from './../../../api/admin/admin-api.d';
 
 
 export type AdminActionsTypes =
-    createCategoryRequest |
-    createCategorySuccess |
-    createCategoryFailure
+    ICreateCategoryRequest |
+    ICreateCategorySuccess |
+    ICreateCategoryFailure
 
-export interface createCategoryRequest {
+export interface ICreateCategoryRequest {
     type: typeof CREATE_CATEGORY_REQUEST,
     formData: ICreateCategoryRequestData
 }
-export interface createCategorySuccess {
+export interface ICreateCategorySuccess {
     type: typeof CREATE_CATEGORY_SUCCESS,
     response: any
 }
-export interface createCategoryFailure {
+export interface ICreateCategoryFailure {
     type: typeof CREATE_CATEGORY_FAILURE,
-
+    error: string | unknown
 }
 
 export const CREATE_CATEGORY_REQUEST = "CREATE_CATEGORY_REQUEST"

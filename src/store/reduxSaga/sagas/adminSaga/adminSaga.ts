@@ -1,33 +1,24 @@
+import { FETCH_CATEGORIES_REQUEST } from './../../../actions/catalogActions/catalogActionsTypes';
+import { fetchCategoriesSuccess, fetchCategoriesFailure } from './../../../actions/catalogActions/catalogActions';
+import { ICreateCategoryRequest } from './../../../actions/adminActions/adminActionsTypes';
 import { api } from '../../../../api/index';
-import { userSigninSuccess, userSigninFailure, userSignupRequest, userSignupSuccess, userSignupFailure, userSigninRequest } from '../../../actions/authActions/authActions';
 import { call, put, StrictEffect, takeLatest } from "redux-saga/effects";
-import { IUserSigninRequest, IUserSignupRequest, USER_SIGNIN_REQUEST, USER_SIGNUP_REQUEST } from "../../../actions/authActions/authActionsTypes";
 import { AxiosResponse } from 'axios';
+import { CREATE_CATEGORY_REQUEST } from '../../../actions/adminActions/adminActionsTypes';
 
 
-function* userSigninRequestSaga({ formData }: IUserSigninRequest) {
+function* createCategoryRequestSaga({ formData }: ICreateCategoryRequest) {
     try {
-        const response: AxiosResponse = yield call(api.auth.userSignin, formData) 
-        yield put(userSigninSuccess(response.data.access_token));
+        const response: AxiosResponse = yield call(api.admin.createCategory, formData)
+        yield put(fetchCategoriesSuccess(response.data));
 
     } catch (error) {
-        yield put(userSigninFailure(error));
-    }
-}
-
-function* userSignupRequestSaga({ formData }: IUserSignupRequest) {
-    try {
-        const response: AxiosResponse = yield call(api.auth.userSignup, formData)
-        yield put(userSignupSuccess(response.data));
-
-    } catch (error) {
-        yield put(userSignupFailure(error));
+        yield put(fetchCategoriesFailure(error));
     }
 }
 
 function* adminSaga(): Generator<StrictEffect> {
-    yield takeLatest(USER_SIGNIN_REQUEST, userSigninRequestSaga)
-    yield takeLatest(USER_SIGNUP_REQUEST, userSignupRequestSaga)
-}
+    yield takeLatest(CREATE_CATEGORY_REQUEST, createCategoryRequestSaga)
+} 
 
 export default adminSaga

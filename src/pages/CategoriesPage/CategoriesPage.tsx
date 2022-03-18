@@ -15,7 +15,7 @@ const CategoriesPage: React.FC<ICategoriesPage> = () => {
             <div className={s.categories_items}>
                 {categories.map(item => {
                     return (
-                        <Category key={item.itemName} {...item} />
+                        <Category key={item.categoryName} {...item} />
                     )
                 })}
             </div>

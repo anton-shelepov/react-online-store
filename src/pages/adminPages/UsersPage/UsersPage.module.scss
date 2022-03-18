@@ -5,4 +5,13 @@
     .title {
         @include adminTitleParams;
     }
+    .users_list { 
+        .users_list__title {
+            margin-bottom: 25px;
+        }
+        @include adminContentBlockParams;
+        padding: 25px;
+        border-radius: 25px;
+        @include card-box-shadow;
+    }
 }

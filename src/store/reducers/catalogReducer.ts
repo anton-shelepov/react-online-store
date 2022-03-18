@@ -1,72 +1,34 @@
-import { FETCH_CATEGORY_PRODUCTS_REQUEST, FETCH_CATEGORY_PRODUCTS_SUCCESS, FetchCategoryProducts } from './../actions/catalogActions/catalogActionsTypes';
+import { FETCH_CATEGORY_PRODUCTS_REQUEST, FETCH_CATEGORY_PRODUCTS_SUCCESS, FETCH_CATEGORIES_REQUEST, FETCH_CATEGORIES_SUCCESS, FETCH_CATEGORY_PRODUCTS_FAILURE, CatalogActionsTypes } from './../actions/catalogActions/catalogActionsTypes';
 import { ICatalogState } from "../../types/catalogTypes";
 
 const initialState: ICatalogState = {
-    categories: [
-        {
-            image: '',
-            itemName: 'Ноутбуки',
-            link: '/catalog/laptops',
-        },
-        {
-            image: '',
-            itemName: 'Ноутбуки',
-            link: '',
-        },
-        {
-            image: '',
-            itemName: 'Ноутбуки',
-            link: '',
-        },
-        {
-            image: '',
-            itemName: 'Ноутбуки',
-            link: '',
-        },
-        {
-            image: '',
-            itemName: 'Ноутбуки',
-            link: '',
-        },
-        {
-            image: '',
-            itemName: 'Ноутбуки',
-            link: '/catalog/laptops',
-        },
-        {
-            image: '',
-            itemName: 'Ноутбуки',
-            link: '',
-        },
-        {
-            image: '',
-            itemName: 'Ноутбуки',
-            link: '',
-        },
-        {
-            image: '',
-            itemName: 'Ноутбуки',
-            link: '',
-        },
-        {
-            image: '',
-            itemName: 'Ноутбуки',
-            link: '',
-        },
-    ],
+
+    categories: [],
 
     categoryProducts: [],
 
-    productsCount: 0,
-
-    pageSize: 0,
-
-    isLoading: false
+    productsCount: 0, 
+    pageSize: 0, 
+    isLoading: false, 
+    errorMessage: '',
 }
 
 
-const catalogReducer = (state: ICatalogState = initialState, action: FetchCategoryProducts): ICatalogState => {
-    switch (action.type) { 
+const catalogReducer = (state: ICatalogState = initialState, action: CatalogActionsTypes): ICatalogState => {
+    switch (action.type) {
+
+        case FETCH_CATEGORIES_REQUEST:
+            return {
+                ...state,
+                isLoading: true
+            }
+
+        case FETCH_CATEGORIES_SUCCESS:
+            return {
+                ...state,
+                categories: action.data,
+                isLoading: false
+            }
 
         case FETCH_CATEGORY_PRODUCTS_REQUEST:
             return {
@@ -83,6 +45,11 @@ const catalogReducer = (state: ICatalogState = initialState, action: FetchCatego
                 pageSize: action.data.pageSize
             }
 
+        case FETCH_CATEGORY_PRODUCTS_FAILURE:
+            return { 
+                ...state,
+                isLoading: false,
+            }
         default:
             return state
     }

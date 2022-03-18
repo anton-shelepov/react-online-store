@@ -12,8 +12,8 @@ interface IProductsPage { }
 const ProductsPage: React.FC<IProductsPage> = (props) => {
 
     const categoryName = useLocation().pathname.split('/')[2]
-    const queryPage = useLocation().search 
-    
+    const queryPage = useLocation().search
+
     const catalog = useAppSelector(state => state.catalog)
     const dispatch = useAppDispatch()
 
@@ -36,7 +36,12 @@ const ProductsPage: React.FC<IProductsPage> = (props) => {
                 }
             </div>
 
-            {catalog.productsCount > catalog.pageSize && <Pagination pageSize={catalog.pageSize} productsCount={catalog.productsCount} queryPage={+queryPage} />}
+            {catalog.productsCount > catalog.pageSize &&
+                <Pagination
+                    pageSize={catalog.pageSize}
+                    productsCount={catalog.productsCount}
+                    queryPage={+queryPage}
+                />}
 
         </div>
     )

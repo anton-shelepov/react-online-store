@@ -1,6 +1,6 @@
 
 
-@jwt_token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoiMTJAbWFpbC5ydSIsImlhdCI6MTY0NzQyNjkzNCwiZXhwIjoxNjQ3NDg2OTM0fQ.t5LYxdCJjQi9CjIGuhtYwm7mCdlCFbNmIrAZxMwE0Lc
+@jwt_token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImVtYWlsIjoiMTIzNDVAbWFpbC5ydSIsImlhdCI6MTY0NzU3NDk5MSwiZXhwIjoxNjQ3NjM0OTkxfQ.Q-_qgBje8-A-Z_GNKqVkxz4r3ePjGBEP0-lY-yfYDyk
 
 // CREATE NEW CATEGORY 
 POST http://localhost:3001/categories/create 
@@ -109,7 +109,7 @@ POST  http://localhost:3001/auth/signup
 content-type: application/json
 
 {
-    "email": "12@mail.ru",
+    "email": "12345@mail.ru",
     "password": "123123123"
 } 
 
