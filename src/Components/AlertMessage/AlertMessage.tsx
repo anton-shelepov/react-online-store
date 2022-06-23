@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { useState } from 'react';
-import { GlobalSvgSelector } from '../_assets/GlobalSvgSelector';
+import { GlobalSvgSelector } from '../_utils/GlobalSvgSelector';
 import s from './AlertMessage.module.scss';
 
 interface IAlertMessage {
@@ -30,7 +30,7 @@ const AlertMessage: React.FC<IAlertMessage> = ({ message, success }) => {
                 {success
                     ? <GlobalSvgSelector id='success' />
                     : <GlobalSvgSelector id='failure' />
-                } 
+                }
             </div>
         </div>
     )

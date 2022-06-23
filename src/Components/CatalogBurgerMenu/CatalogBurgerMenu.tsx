@@ -1,7 +1,7 @@
 import s from './CatalogBurgerMenu.module.scss';
 import { slide as Menu } from 'react-burger-menu';
 import CatalogSidebar from '../CatalogSidebar/CatalogSidebar';
-import { GlobalSvgSelector } from '../_assets/GlobalSvgSelector';
+import { GlobalSvgSelector } from '../_utils/GlobalSvgSelector';
 import { useState } from 'react';
 
 

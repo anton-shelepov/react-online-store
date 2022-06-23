@@ -1,0 +1,55 @@
+@import "./../_common/variables.scss";
+@import "./../_common/mixins.scss";
+
+.popular_products {
+    .title {
+        margin: 60px 0 20px 0; 
+    } 
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        .card {
+            margin: 10px; 
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 0;
+            text-align: center;
+            flex-direction: column;
+            @include card-box-shadow;
+            border-radius: 25px;
+            padding: 25px;
+            transition: all 0.4s;
+            &:hover {
+                @include card-box-shadow-hover;
+            }
+            .product_title {
+                cursor: pointer;
+                margin: 5px 0;
+            }
+            .rating {
+                margin-bottom: 5px;
+                display: inline-block;
+            }
+            .in_stock {
+                margin-bottom: 10px;
+            }
+            .discount_block {
+                .discount {
+                    color: red;
+                    opacity: 0.6;
+                    font-size: 15px;
+                }
+                .old_price {
+                    opacity: 0.6;
+                    margin-left: 10px;
+                    font-size: 14px;
+                    text-decoration: line-through;
+                }
+            }
+    
+            .current_price {
+                font-size: 20px;
+            }
+        }
+    } 
+}

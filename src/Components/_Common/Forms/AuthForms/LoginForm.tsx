@@ -5,7 +5,7 @@ import TextInput from '../../Inputs/TextInput/TextInput';
 import { loginSchema } from '../FormsSchemas';
 import SubmitButton from '../../Buttons/SubmitButton/SubmitButton';
 import { Dispatch, SetStateAction } from 'react';
-import { useAppDispatch } from '../../../../utils/hooks/hooks';
+import { useAppDispatch } from '../../../../utils/hooks/reduxHooks';
 import { userSigninRequest } from '../../../../store/actions/authActions/authActions';
 
 export interface ILoginForm {
@@ -17,7 +17,7 @@ type LoginFormProps = {
     setForm: Dispatch<SetStateAction<string>>
 }
 
-const LoginForm: React.FC<LoginFormProps> = ({setForm}) => {
+const LoginForm: React.FC<LoginFormProps> = ({ setForm }) => {
 
     const dispatch = useAppDispatch();
 
@@ -31,8 +31,8 @@ const LoginForm: React.FC<LoginFormProps> = ({setForm}) => {
         mode: "onBlur",
     })
 
-    const onSubmit = handleSubmit(({email, password}: ILoginForm) => { 
-        dispatch(userSigninRequest({email, password}))
+    const onSubmit = handleSubmit(({ email, password }: ILoginForm) => {
+        dispatch(userSigninRequest({ email, password }))
         reset();
     })
 

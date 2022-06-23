@@ -1,19 +1,19 @@
-import { instance } from ".."
+import { privateClient } from ".."
 
 export interface ICatalogApi {
-    
-} 
+
+}
 
 const basePath = '/categories'
 
-export const catalog = { 
+export const catalog = {
 
     fetchCategories() {
-        return instance.get(`${basePath}`)
+        return privateClient.get(`${basePath}`)
     },
 
     fetchCategoryProducts(categoryName: string, queryPage?: string) {
-        return instance.get(`${basePath}/${categoryName}${typeof queryPage !== "undefined" ? `/${queryPage}` : ''}`)
-    }, 
+        return privateClient.get(`${basePath}/${categoryName}${typeof queryPage !== "undefined" ? `/${queryPage}` : ''}`)
+    },
 
 } 

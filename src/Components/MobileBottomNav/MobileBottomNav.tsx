@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
-import { useAppSelector } from '../../utils/hooks/hooks';
-import { GlobalSvgSelector } from '../_assets/GlobalSvgSelector';
+import { useAppSelector } from '../../utils/hooks/reduxHooks';
+import { GlobalSvgSelector } from '../_utils/GlobalSvgSelector';
 import SearchButton from '../_common/Buttons/SeacrhButton/SearchButton';
 import s from './MobileBottomNav.module.scss';
 

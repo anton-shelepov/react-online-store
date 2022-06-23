@@ -2,7 +2,7 @@ import { useEffect, useMemo } from 'react';
 import ReactTable from '../../../components/ReactTable/ReactTable';
 import ButtonWithIcon from '../../../components/_common/Buttons/ButtonWithIcon/ButtonWithIcon';
 import { fetchAllUsersRequest } from '../../../store/actions/usersActions/usersActions';
-import { useAppDispatch, useAppSelector } from '../../../utils/hooks/hooks';
+import { useAppDispatch, useAppSelector } from '../../../utils/hooks/reduxHooks';
 import s from './UsersPage.module.scss';
 
 interface IUsersPage { }
@@ -58,7 +58,7 @@ const UsersPage: React.FC<IUsersPage> = (props) => {
 
     const tableData = users.map(user => {
 
-        const createdAt = user.createdAt.replace('T', ' ').replace(/-/g,'.').slice(0, -5)
+        const createdAt = user.createdAt.replace('T', ' ').replace(/-/g, '.').slice(0, -5)
 
         return {
             id: user.id,
@@ -68,7 +68,7 @@ const UsersPage: React.FC<IUsersPage> = (props) => {
             email: user.email,
             review: user._count.review,
             buttons: <ButtonWithIcon content="Заблокировать" icon="close" />
-        } 
+        }
     })
 
 

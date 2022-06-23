@@ -92,4 +92,22 @@ export const registrationSchema = yup.object().shape({
         .string()
         .required(requiredInput)
         .oneOf([yup.ref("password")], passwordsMustMatch),
-}) 
+})
+
+export const createProductSchema = yup.object().shape({
+    title: yup
+        .string()
+        .required(requiredInput),
+    mainSpecs: yup
+        .string()
+        .required(requiredInput),
+    isInStock: yup
+        .string()
+        .required(requiredInput),
+    price: yup
+        .number()
+        .required(requiredInput),
+    discount: yup
+        .number()
+        .nullable()
+})

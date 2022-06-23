@@ -6,7 +6,7 @@ export interface ICatalogState {
     productsCount: number,
     pageSize: number,
     isLoading: boolean,
-    errorMessage: string,
+    errorMessage: string | unknown,
 }
 
 // Category state components types

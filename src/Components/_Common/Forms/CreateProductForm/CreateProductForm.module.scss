@@ -1,6 +1,10 @@
+@import "./../../mixins.scss";
+@import "./../../variables.scss";
+
 .create_product_form {
+    max-width: fit-content;
     .form_title {
-        margin-bottom: 25px; 
+        margin-bottom: 25px;
     }
     .specs {
         margin-top: 35px;
@@ -8,8 +12,63 @@
             margin-bottom: 15px;
         }
         .specs_groups_items {
+            .spec_group_item {
+                position: relative;
+                background-color: rgb(248, 248, 248);
+                padding: 25px;
+                border-radius: 25px;
+                @include card-box-shadow;
+                margin-bottom: 15px;
+                .delete_group_btn {
+                    cursor: pointer;
+                    background-color: transparent;
+                    border: none;
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;
+                    transition: all .2s;
+                    &:hover {
+                        transform: rotate(90deg);
+                    }
+                    svg {
+                        opacity: .5;
+                        width: 15px;
+                        height: 15px;
+                    }
+                }
+            }
             .specs_item {
                 display: flex;
+            }
+            .new_group_btn,
+            .new_spec_btn {
+                display: inline-flex;
+                align-items: center;
+                @include gradientBorder(1px);
+                @include card-box-shadow;
+                padding: 10px 20px;
+                border-radius: 25px;
+                font-size: 15px;
+                color: #312038;
+                cursor: pointer;
+                width: 100%;
+                margin: 5px 0;
+                transition: all 0.3s;
+                &:hover {
+                    @include card-box-shadow-hover;
+                }
+                svg {
+                    opacity: .7;
+                    margin-right: 15px;
+                    width: 17px;
+                    height: 17px;
+                }
+            }
+            .new_spec_btn {
+                margin: 20px 0 5px 0;
+            }
+            .new_group_btn {
+                margin-bottom: 20px;
             }
         }
     }

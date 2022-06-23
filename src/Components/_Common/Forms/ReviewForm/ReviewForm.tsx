@@ -6,7 +6,7 @@ import Rating from '../../../Rating/Rating';
 import { useState } from 'react';
 import DefaultSelect from '../../Selects/DefaultSelect';
 import classNames from 'classnames';
-import { GlobalSvgSelector } from '../../../_assets/GlobalSvgSelector';
+import { GlobalSvgSelector } from '../../../_utils/GlobalSvgSelector';
 
 const ReviewForm: React.FC = () => {
 
@@ -37,9 +37,9 @@ const ReviewForm: React.FC = () => {
 
     const onSubmit = handleSubmit((data) => {
 
-        const submitData = { 
-            ...data, 
-            rating, 
+        const submitData = {
+            ...data,
+            rating,
         }
         console.log(submitData)
         reset({

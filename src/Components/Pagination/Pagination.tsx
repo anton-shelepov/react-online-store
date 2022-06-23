@@ -1,6 +1,6 @@
 import { MouseEventHandler, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { GlobalSvgSelector } from '../_assets/GlobalSvgSelector';
+import { GlobalSvgSelector } from '../_utils/GlobalSvgSelector';
 import ShowMoreButton from '../_common/Buttons/ShowMoreButton/ShowMoreButton';
 import s from './Pagination.module.scss';
 import { showPagesOnPaginator } from './utils/showPagesOnPaginator';
@@ -10,11 +10,11 @@ interface IPagination {
     queryPage: number,
 }
 
-const Pagination: React.FC<IPagination> = ({ pageSize, productsCount, queryPage }) => { 
+const Pagination: React.FC<IPagination> = ({ pageSize, productsCount, queryPage }) => {
 
-    const totalPages: number = Math.round(productsCount / pageSize + 1) 
+    const totalPages: number = Math.round(productsCount / pageSize)
 
-    const [currentPage, setCurrentPage] = useState(1) 
+    const [currentPage, setCurrentPage] = useState(1)
 
     const navigate = useNavigate()
 
@@ -42,7 +42,7 @@ const Pagination: React.FC<IPagination> = ({ pageSize, productsCount, queryPage 
 
     const onEndPageChange = () => {
         setCurrentPage(totalPages)
-    } 
+    }
 
     const pagesNumbers = showPagesOnPaginator(currentPage, totalPages)
 
@@ -57,8 +57,8 @@ const Pagination: React.FC<IPagination> = ({ pageSize, productsCount, queryPage 
                 </span>
                 {
                     pagesNumbers.map(pageNumber => (
-                            <span key={pageNumber} className={`${s.page_number} ${pageNumber === currentPage ? s.active : ''}`} onClick={onNumberPageChange}>{pageNumber}</span>
-                        ))
+                        <span key={pageNumber} className={`${s.page_number} ${pageNumber === currentPage ? s.active : ''}`} onClick={onNumberPageChange}>{pageNumber}</span>
+                    ))
                 }
                 <span className={s.next} onClick={onNextPageChange}>
                     <GlobalSvgSelector id='paginationArrow' />

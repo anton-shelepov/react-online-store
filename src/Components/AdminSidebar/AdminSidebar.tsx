@@ -1,11 +1,11 @@
 import classNames from 'classnames';
 import { Link, useLocation } from 'react-router-dom';
-import { GlobalSvgSelector } from '../_assets/GlobalSvgSelector';
+import { GlobalSvgSelector } from '../_utils/GlobalSvgSelector';
 import s from './AdminSidebar.module.scss';
 
 interface IAdminSidebar { }
 
-const AdminSidebar: React.FC<IAdminSidebar> = (props) => { 
+const AdminSidebar: React.FC<IAdminSidebar> = (props) => {
 
     const pathname = useLocation().pathname
     console.log(pathname)

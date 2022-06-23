@@ -1,6 +1,6 @@
 import ProductCard from '../../components/ProductCard/ProductCard';
 import SubmitButton from '../../components/_common/Buttons/SubmitButton/SubmitButton';
-import { useAppSelector } from '../../utils/hooks/hooks';
+import { useAppSelector } from '../../utils/hooks/reduxHooks';
 import s from './BasketPage.module.scss';
 
 interface IBasketPage { }

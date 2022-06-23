@@ -8,7 +8,7 @@ interface IAuthPage {
 
 }
 
-const AuthPage: React.FC<IAuthPage> = ({}) => {
+const AuthPage: React.FC<IAuthPage> = () => {
 
     const [form, setForm] = useState('login');
 

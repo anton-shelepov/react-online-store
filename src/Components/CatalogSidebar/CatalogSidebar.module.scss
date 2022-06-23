@@ -4,28 +4,31 @@
     width: $sidebarWidth;
     white-space: nowrap;
     background-color: white;
-    padding: 25px;
+    padding: 10px 25px;
     border-radius: 15px;
-    margin-right: 10px;
-
-    .title {
-        margin-bottom: 25px;
-    }
-
+    margin-right: 10px; 
     @include block-box-shadow;
 
-    .categories_list { 
-        padding-left: 20px; 
+    .categories_list {
+        padding-left: 0;
         li {
-            list-style-type: none;
-            margin-bottom: 15px;
+            list-style-type: none; 
+            border-bottom: 1px dotted rgba(122, 122, 122, 0.315);
             a {
                 display: flex;
                 align-items: center;
+                font-size: 15px;
+                padding: 20px 10px;
+                transition: all 0.3s; 
+                &:hover {
+                    opacity: .8;
+                }
                 img {
-                    margin-right: 5px;
-                    width: 30px;
-                    height: 30px;
+                    opacity: .4;
+                    display: flex;
+                    margin-right: 20px;
+                    width: 20px;
+                    height: 20px;
                 }
             }
         }

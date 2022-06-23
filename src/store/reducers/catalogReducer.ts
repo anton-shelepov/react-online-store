@@ -46,9 +46,11 @@ const catalogReducer = (state: ICatalogState = initialState, action: CatalogActi
             }
 
         case FETCH_CATEGORY_PRODUCTS_FAILURE:
+            debugger
             return { 
                 ...state,
                 isLoading: false,
+                errorMessage: action.errorMessage
             }
         default:
             return state

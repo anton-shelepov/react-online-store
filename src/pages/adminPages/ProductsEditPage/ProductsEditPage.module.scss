@@ -28,9 +28,11 @@
                 }
                 .product_create {
                     @include card-box-shadow;
+                    border: 1px dashed #72517f46;
+                    background-color: #72517f17;
                     border-radius: 25px;
                     padding: 25px;
-                    margin-left: 15px; 
+                    margin-left: 15px;
                 }
             }
         }

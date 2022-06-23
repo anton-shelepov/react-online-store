@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import MediaQuery from 'react-responsive';
 import { ProductInfo } from '../../types/productTypes';
-import { priceFormatter } from '../../utils/scripts/scripts';
+import { priceFormatter } from '../../utils/scripts/commonScripts';
 import ProductGallery from '../ProductGallery/ProductGallery';
 import StaticRating from '../Rating/StaticRating/StaticRating';
 import MainSlider from '../Slider/Slider';
-import { smallWidth } from '../_assets/BreakpointsConsts';
-import { GlobalSvgSelector } from '../_assets/GlobalSvgSelector';
+import { smallWidth } from '../_utils/BreakpointsConsts';
+import { GlobalSvgSelector } from '../_utils/GlobalSvgSelector';
 import ButtonWithIcon from '../_common/Buttons/ButtonWithIcon/ButtonWithIcon';
 import FavoriteButton from '../_common/Buttons/FavoriteButton/FavoriteButton';
 import s from './LargeProductCard.module.scss';

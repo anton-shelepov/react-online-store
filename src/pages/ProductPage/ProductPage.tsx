@@ -1,6 +1,6 @@
 import s from './ProductPage.module.scss';
-import LargeProductCard from '../../components/LargeProductCard/LargeProductCard'; 
-import { useAppSelector } from '../../utils/hooks/hooks';
+import LargeProductCard from '../../components/LargeProductCard/LargeProductCard';
+import { useAppSelector } from '../../utils/hooks/reduxHooks';
 import ProductSpecs from '../../components/ProductSpecs/ProductSpecs';
 import { ProductInfo, ProductReview, ProductSpec } from '../../types/productTypes';
 import Reviews from '../../components/Reviews/Reviews';
@@ -8,8 +8,8 @@ import ReviewForm from '../../components/_common/Forms/ReviewForm/ReviewForm';
 
 const ProductPage: React.FC = () => {
 
-    const productInfo: ProductInfo = useAppSelector((store) => store.product.productInfo) 
-    const productSpecs: ProductSpec[] = useAppSelector((store) => store.product.productSpecs) 
+    const productInfo: ProductInfo = useAppSelector((store) => store.product.productInfo)
+    const productSpecs: ProductSpec[] = useAppSelector((store) => store.product.productSpecs)
     const productReviews: ProductReview[] = useAppSelector((store) => store.product.productReviews)
 
     return (

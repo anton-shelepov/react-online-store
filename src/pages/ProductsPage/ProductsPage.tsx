@@ -2,7 +2,7 @@ import ProductCard from '../../components/ProductCard/ProductCard';
 import s from './ProductsPage.module.scss';
 import Info from './Info/Info';
 import { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../utils/hooks/hooks';
+import { useAppDispatch, useAppSelector } from '../../utils/hooks/reduxHooks';
 import { fetchCategoryProductsRequest } from '../../store/actions/catalogActions/catalogActions';
 import { useLocation } from 'react-router-dom';
 import Pagination from '../../components/Pagination/Pagination';
@@ -23,9 +23,7 @@ const ProductsPage: React.FC<IProductsPage> = (props) => {
 
     return (
         <div className={s.products_page}>
-
             <Info productsCount={catalog.productsCount} />
-
             <div className={s.products}>
                 {
                     catalog.categoryProducts.map((product) => {
@@ -35,14 +33,12 @@ const ProductsPage: React.FC<IProductsPage> = (props) => {
                     })
                 }
             </div>
-
             {catalog.productsCount > catalog.pageSize &&
                 <Pagination
                     pageSize={catalog.pageSize}
                     productsCount={catalog.productsCount}
                     queryPage={+queryPage}
                 />}
-
         </div>
     )
 }

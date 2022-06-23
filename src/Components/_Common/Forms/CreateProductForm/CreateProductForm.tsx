@@ -1,15 +1,15 @@
 import s from './CreateProductForm.module.scss';
-import { Controller, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import RadioInput from '../../Inputs/RadioInput/RadioInput';
 import TextInput from '../../Inputs/TextInput/TextInput';
 import SubmitButton from '../../Buttons/SubmitButton/SubmitButton';
-import { profileEditSchema } from '../FormsSchemas';
-import NumberFormat from 'react-number-format';
-import TextInputMask from '../../Inputs/TextInput/TextInputMask';
+import { createProductSchema, profileEditSchema } from '../FormsSchemas';
 import { useState } from 'react';
+import { GlobalSvgSelector } from '../../../_utils/GlobalSvgSelector';
+import SpecsGroupItems from './SpecsGroupsItems/SpecsGroupItems';
+import FileInput from '../../Inputs/FileInput/FileInput';
 
-export interface IProfileEdit {
+export interface ICreateProductForm {
 
 }
 
@@ -20,8 +20,8 @@ const CreateProductForm: React.FC = () => {
         handleSubmit,
         reset,
         control,
-    } = useForm<IProfileEdit>({
-        resolver: yupResolver(profileEditSchema),
+    } = useForm<ICreateProductForm>({
+        resolver: yupResolver(createProductSchema),
         mode: "onBlur",
     })
 
@@ -32,10 +32,25 @@ const CreateProductForm: React.FC = () => {
         });
     })
 
-    const [specsGroupsCount, setSpecsGroupsCount] = useState(1);
+    const [currentGroup, setCurrentGroup] = useState(1);
+
+    const [totalGroups, setTotalGroups] = useState([currentGroup])
+
+    const [currentSpec, setCurrentSpec] = useState(1)
 
     const onAddSpecGroup = () => {
-        setSpecsGroupsCount(specsGroupsCount + 1)
+        setTotalGroups([...totalGroups, currentGroup + 1])
+        setCurrentGroup(currentGroup + 1)
+        setCurrentSpec(1)
+    }
+
+    const onDeleteSpecGroup: React.MouseEventHandler<HTMLDivElement> | undefined = (e) => {
+        const currentGroupNumber = +e.currentTarget.id.replace('btn', '')
+        setTotalGroups(totalGroups.filter(groupNumber => groupNumber !== currentGroupNumber))
+    }
+
+    const onAddSpecItem = () => {
+        setCurrentSpec(currentSpec + 1)
     }
 
     return (
@@ -46,40 +61,26 @@ const CreateProductForm: React.FC = () => {
             <TextInput register={register} errors={errors} name="isInStock" label="В наличии" required />
             <TextInput register={register} errors={errors} name="price" label="Стоимость" required />
             <TextInput register={register} errors={errors} name="discount" label="Скидка" />
+            <FileInput register={register} name="productImages" id="productImages" label="Картинки товара (до 10 шт.)" />
             <div className={s.specs}>
                 <h3>Характеристики</h3>
                 <div className={s.specs_groups_items}>
-                    <div className={s.specs_group_title}>
-                        <TextInput register={register} errors={errors} name="specGroupTitle1" label="Наименование группы" />
+
+                    <SpecsGroupItems
+                        currentGroup={currentGroup}
+                        register={register}
+                        errors={errors}
+                        totalGroups={totalGroups}
+                        onDeleteSpecGroup={onDeleteSpecGroup}
+                        onAddSpecItem={onAddSpecItem}
+                        currentSpec={currentSpec}
+                    />
+
+                    <div className={s.new_group_btn} onClick={onAddSpecGroup}>
+                        <GlobalSvgSelector id='plus' />
+                        Добавить новую группу
                     </div>
-                    <div className={s.specs_item}>
-                        <TextInput register={register} errors={errors} name="specGroupItemTitle1-1" label="Характеристика" />
-                        <TextInput register={register} errors={errors} name="specGroupItemValue1-1" label="Значение" />
-                    </div>
-                    <div className={s.specs_item}>
-                        <TextInput register={register} errors={errors} name="specGroupTitle1-2" label="Характеристика" />
-                        <TextInput register={register} errors={errors} name="specGroupValue1-2" label="Значение" />
-                    </div>
-                    <div className={s.specs_item}>
-                        <TextInput register={register} errors={errors} name="specGroupTitle1-3" label="Характеристика" />
-                        <TextInput register={register} errors={errors} name="specGroupValue1-3" label="Значение" />
-                    </div>
-                    <div className={s.specs_group_title}>
-                        <TextInput register={register} errors={errors} name="specGroupTitle2" label="Наименование группы" />
-                    </div>
-                    <div className={s.specs_item}>
-                        <TextInput register={register} errors={errors} name="specGroupItemTitle2-1" label="Характеристика" />
-                        <TextInput register={register} errors={errors} name="specGroupItemValue2-1" label="Значение" />
-                    </div>
-                    <div className={s.specs_item}>
-                        <TextInput register={register} errors={errors} name="specGroupTitle2-2" label="Характеристика" />
-                        <TextInput register={register} errors={errors} name="specGroupValue2-2" label="Значение" />
-                    </div>
-                    <div className={s.specs_item}>
-                        <TextInput register={register} errors={errors} name="specGroupTitle2-3" label="Характеристика" />
-                        <TextInput register={register} errors={errors} name="specGroupValue2-3" label="Значение" />
-                    </div>
-                </div> 
+                </div>
             </div>
             <SubmitButton value="Создать товар" />
         </form>

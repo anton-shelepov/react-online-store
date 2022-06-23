@@ -3,21 +3,21 @@ import ReactTable from '../../../components/ReactTable/ReactTable';
 import ButtonWithIcon from '../../../components/_common/Buttons/ButtonWithIcon/ButtonWithIcon';
 import CreateCategoryForm from '../../../components/_common/Forms/CreateCategoryForm/CreateCategoryForm';
 import { fetchCategoriesRequest } from '../../../store/actions/catalogActions/catalogActions';
-import { useAppDispatch, useAppSelector } from '../../../utils/hooks/hooks';
+import { useAppDispatch, useAppSelector } from '../../../utils/hooks/reduxHooks';
 import s from './CategoriesEditPage.module.scss';
 
 interface IAdminPage { }
 
 const CategoriesEditPage: React.FC<IAdminPage> = (props) => {
 
-    const dispatch = useAppDispatch() 
+    const dispatch = useAppDispatch()
 
     useEffect(() => {
         dispatch(fetchCategoriesRequest())
-    }, [dispatch]) 
+    }, [dispatch])
 
-    const categories = useAppSelector(store => store.catalog.categories) 
-        
+    const categories = useAppSelector(store => store.catalog.categories)
+
     const columns = useMemo(
         () => [
             {
@@ -55,7 +55,7 @@ const CategoriesEditPage: React.FC<IAdminPage> = (props) => {
 
     const tableData = categories.map(category => {
 
-        const updatedAt = category.updatedAt.replace('T', ' ').replace(/-/g,'.').slice(0, -5)
+        const updatedAt = category.updatedAt.replace('T', ' ').replace(/-/g, '.').slice(0, -5)
 
         return {
             icon: category.icon,

@@ -36,8 +36,8 @@ export const fetchCategoryProductsSuccess = (data: FetchCategoryProductsSuccessD
     data
 })
 
-export const fetchCategoryProductsFailure = (error: string | unknown) =>
+export const fetchCategoryProductsFailure = (errorMessage: string | unknown) =>
 ({
     type: FETCH_CATEGORY_PRODUCTS_FAILURE,
-    error
+    errorMessage
 }) 

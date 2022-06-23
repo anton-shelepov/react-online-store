@@ -1,15 +1,15 @@
-import { ISignupRequestData, ISigninRequestData } from './auth-api-types.d';
-import { instance } from ".."
+import { privateClient } from "..";
+import { ISigninRequestData, ISignupRequestData } from './auth-api-types.d';
 
 const basePath = '/auth'
 
 export const auth = {
 
     userSignin(formData: ISigninRequestData) {
-        return instance.post(`${basePath}/signin`, { ...formData })
+        return privateClient.post(`${basePath}/signin`, formData)
     },
 
     userSignup(formData: ISignupRequestData) {
-        return instance.post(`${basePath}/signup`, { ...formData })
+        return privateClient.post(`${basePath}/signup`, formData)
     }
 } 

@@ -1,27 +1,28 @@
 @import "./../_Common/mixins.scss";
 @import "./../_Common/variables.scss";
 
-.container { 
-    
+.container {
     .catalog_item {
         display: inline-flex;
         flex-direction: column;
-        align-items: center;
-
+        align-items: center; 
+        
         @include card-box-shadow;
-        @include gradientBorder(1px);
+        @include gradientBorder(2px);
         border-radius: $card-border-radius;
         padding: 20px;
         margin: 10px;
         transition: all 0.3s;
         font-size: 18px;
+        width: 320px;
 
-        img {
-            width: 214px;
+        img { 
+            max-width: 180px;
+            max-height: 170px;
         }
 
         .item_name {
-            margin: 5px 0 10px 0;
+            margin: 25px 0 10px 0;
         }
 
         &:hover {

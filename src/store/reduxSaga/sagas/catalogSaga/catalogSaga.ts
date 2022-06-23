@@ -9,11 +9,11 @@ import { AxiosResponse } from 'axios';
 function* fetchCategoryProductsSaga({ categoryName, queryPage }: IFetchCategoryProductsRequest) {
     try {
         const response: AxiosResponse = yield call(api.catalog.fetchCategoryProducts, categoryName, queryPage)
+        if (response?.data?.response?.statusCode === 404) throw new Error(response.data.message)
         yield put(fetchCategoryProductsSuccess(response.data));
-    } catch (error) {
-        console.log(error)
+    } catch (error: any | unknown) { 
         yield put(
-            fetchCategoryProductsFailure({ error })
+            fetchCategoryProductsFailure(error.message)
         );
     }
 }

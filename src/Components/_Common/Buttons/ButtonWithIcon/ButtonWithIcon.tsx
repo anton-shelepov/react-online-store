@@ -1,8 +1,8 @@
-import { GlobalSvgSelector } from '../../../_assets/GlobalSvgSelector';
+import { GlobalSvgSelector } from '../../../_utils/GlobalSvgSelector';
 import s from './ButtonWithIcon.module.scss';
 
 interface IButtonWithIcon {
-    content: string | undefined; 
+    content: string | undefined;
     icon: string | undefined;
 }
 

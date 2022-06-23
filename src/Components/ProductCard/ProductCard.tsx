@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ProductsItem } from '../../types/catalogTypes';
-import { getImageSrc, priceFormatter } from '../../utils/scripts/scripts';
+import { getImageSrc, priceFormatter } from '../../utils/scripts/commonScripts';
 import StaticRating from '../Rating/StaticRating/StaticRating';
 import ButtonWithIcon from '../_common/Buttons/ButtonWithIcon/ButtonWithIcon';
 import FavoriteButton from '../_common/Buttons/FavoriteButton/FavoriteButton';
@@ -18,7 +18,7 @@ const ProductCard: React.FC<ProductsItem> = ({
     btnIcon,
     btnValue,
     _count,
-}) => { 
+}) => {
     return (
         <div className={s.product_card}>
             <div className={s.block_left}>
@@ -27,7 +27,7 @@ const ProductCard: React.FC<ProductsItem> = ({
                     <Link to={`/product/${id}`}><h3 className={s.title}>{title}</h3></Link>
                     <div className={s.additional}>
                         <div className={s.rating}>
-                            <StaticRating reviews={_count?.reviews} rating={rating} /> 
+                            <StaticRating reviews={_count?.reviews} rating={rating} />
                         </div>
                         <p className={s.in_stock}>В наличии: {isInStock ? "есть" : "нет"}</p>
                     </div>
@@ -35,12 +35,12 @@ const ProductCard: React.FC<ProductsItem> = ({
             </div>
             <div className={s.block_right}>
                 <div className={s.price}>
-                    { 
-                        discount && (
+                    {
+                        discount !== 0 && discount !== undefined && (
                             <>
-                                
+
                                 <span className={s.discount}>{`-${discount}%`}</span>
-                                <span className={s.old_price}>{priceFormatter(price + (price * (discount/100)))}</span>
+                                <span className={s.old_price}>{priceFormatter(price + (price * (discount / 100)))}</span>
                             </>
                         )
                     }

@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { api } from '../../../../api';
-import { useAppDispatch } from '../../../../utils/hooks/hooks';
+import { useAppDispatch } from '../../../../utils/hooks/reduxHooks';
 import SubmitButton from '../../Buttons/SubmitButton/SubmitButton';
 import FileInput from '../../Inputs/FileInput/FileInput';
 import TextInput from '../../Inputs/TextInput/TextInput';
@@ -10,7 +10,7 @@ interface ICreateCategoryFormProps {
 
 }
 
-interface ICreateCategoryForm { 
+interface ICreateCategoryForm {
     image: any
     icon: any
     categoryName: string

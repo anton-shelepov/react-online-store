@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { CategoriesItem } from '../../types/catalogTypes';
-import { getImageSrc } from '../../utils/scripts/scripts';
+import { getImageSrc } from '../../utils/scripts/commonScripts';
 import s from './Category.module.scss';
 
 

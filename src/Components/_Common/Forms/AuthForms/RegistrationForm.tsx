@@ -7,7 +7,7 @@ import SubmitButton from '../../Buttons/SubmitButton/SubmitButton';
 import { Dispatch, SetStateAction } from 'react';
 import NumberFormat from 'react-number-format';
 import TextInputMask from '../../Inputs/TextInput/TextInputMask';
-import { useAppDispatch } from '../../../../utils/hooks/hooks';
+import { useAppDispatch } from '../../../../utils/hooks/reduxHooks';
 import { userSignupRequest } from '../../../../store/actions/authActions/authActions';
 
 export interface IRegistrationForm {

@@ -1,6 +1,6 @@
 
 
-@jwt_token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImVtYWlsIjoiMTIzNDVAbWFpbC5ydSIsImlhdCI6MTY0NzU3NDk5MSwiZXhwIjoxNjQ3NjM0OTkxfQ.Q-_qgBje8-A-Z_GNKqVkxz4r3ePjGBEP0-lY-yfYDyk
+@jwt_token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImVtYWlsIjoiM0BtYWlsLnJ1IiwiaWF0IjoxNjQ4NDU4NzExLCJleHAiOjE2NDg4MTg3MTF9.1n2MQYRXQHV8g6RBsiJ5y0sBYmo2aZuGWns4Lf3Ccv8
 
 // CREATE NEW CATEGORY 
 POST http://localhost:3001/categories/create 
@@ -21,11 +21,12 @@ content-type: application/json
 Authorization: {{jwt_token}}
 
 {
-    "title": "Ноутбук",
+    "title": "15.6\" Ноутбук Acer Aspire 3 A315-23-R8D5 серебристый",
     "categoryName": "laptops",
-    "mainSpecs": "Хороший ноутбук",
+    "mainSpecs": "2560x1600, IPS, Apple M1, 8 ядер, RAM 16 ГБ, SSD 256 ГБ, Apple M1 7-core , macOS",
     "isInStock": true,
-    "price": 100000,
+    "price": 63000,
+    "discount": 5,
     "specs": [ 
         {
             "specGroupTitle": "Внешний вид",
@@ -84,7 +85,7 @@ content-type: application/json
 Authorization: {{jwt_token}}
 
 {
-    "productId": 2,
+    "productId": 1,
     "usedTerm": "Менее месяца",
     "dignity": "Хорошо",
     "flaws": "Плохо",
@@ -109,7 +110,7 @@ POST  http://localhost:3001/auth/signup
 content-type: application/json
 
 {
-    "email": "12345@mail.ru",
+    "email": "antonc2@mail.ru",
     "password": "123123123"
 } 
 
@@ -122,6 +123,14 @@ content-type: application/json
     "email": "gatwasdbar3eddasdmadsdzxDc2da@gmail.com",
     "password": "123d123123"
 } 
+
+###
+// REFRESH
+POST  http://localhost:3001/auth/refresh
+content-type: application/json
+Cookie: foo=bar
+Cookie: foos=bars
+
 
 ###
 // UPDATE PROFILE

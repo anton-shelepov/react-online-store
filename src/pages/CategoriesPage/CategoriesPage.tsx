@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import Category from '../../components/Category/Category';
 import { fetchCategoriesRequest } from '../../store/actions/catalogActions/catalogActions';
-import { useAppDispatch, useAppSelector } from '../../utils/hooks/hooks';
+import { useAppDispatch, useAppSelector } from '../../utils/hooks/reduxHooks';
 import s from './CategoriesPage.module.scss';
 
 interface ICategoriesPage { }

@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { FormEventHandler, MouseEventHandler, useEffect, useState } from 'react';
 import MediaQuery from 'react-responsive';
-import { smallWidth } from '../_assets/BreakpointsConsts';
+import { smallWidth } from '../_utils/BreakpointsConsts';
 import DefaultSelect from '../_common/Selects/DefaultSelect';
 import s from './Sort.module.scss';
 

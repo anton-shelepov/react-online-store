@@ -19,7 +19,7 @@ export interface IFetchCategoriesSuccess {
 }
 export interface IFetchCategoriesFailure {
     type: typeof FETCH_CATEGORIES_FAILURE
-    error: string | unknown
+    errorMessage: string | unknown
 }
 
 export const FETCH_CATEGORIES_REQUEST = 'FETCH_CATEGORIES_REQUEST'
@@ -46,7 +46,7 @@ export type FetchCategoryProductsSuccessData = {
 
 export interface IFetchCategoryProductsFailure {
     type: typeof FETCH_CATEGORY_PRODUCTS_FAILURE
-    error: string | unknown
+    errorMessage: string | unknown
 }
 
 export const FETCH_CATEGORY_PRODUCTS_REQUEST = 'FETCH_CATEGORY_PRODUCTS_REQUEST'

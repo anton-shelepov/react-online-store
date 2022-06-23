@@ -1,8 +1,8 @@
 import { MouseEventHandler, ReactElement, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { fetchCategoriesRequest } from '../../store/actions/catalogActions/catalogActions';
-import { useAppDispatch, useAppSelector } from '../../utils/hooks/hooks';
-import { getImageSrc } from '../../utils/scripts/scripts';
+import { useAppDispatch, useAppSelector } from '../../utils/hooks/reduxHooks';
+import { getImageSrc } from '../../utils/scripts/commonScripts';
 import s from './CatalogSidebar.module.scss'
 
 
@@ -15,10 +15,10 @@ export default function CatalogSidebar({ closeSideBar, isOpen }: ICatalogSidebar
 
     const dispatch = useAppDispatch()
 
-    const categories = useAppSelector(store => store.catalog.categories) 
+    const categories = useAppSelector(store => store.catalog.categories)
 
     useEffect(() => {
-        if(categories.length === 0) {
+        if (categories.length === 0) {
             dispatch(fetchCategoriesRequest())
         }
     }, [dispatch, categories])
@@ -26,7 +26,6 @@ export default function CatalogSidebar({ closeSideBar, isOpen }: ICatalogSidebar
 
     return (
         <div className={s.catalog}>
-            <h2 className={s.title}><Link to='/catalog'>Каталог</Link></h2>
             <ul className={s.categories_list}>
                 {
                     categories.map(category => {

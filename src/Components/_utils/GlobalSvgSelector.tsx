@@ -324,7 +324,7 @@ export const GlobalSvgSelector = ({ id }: Props) => {
             return (
                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                     width="64.000000pt" height="64.000000pt" viewBox="0 0 64.000000 64.000000"
-                    preserveAspectRatio="xMidYMid meet"> 
+                    preserveAspectRatio="xMidYMid meet">
                     <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)"
                         fill="#000000" stroke="none">
                         <path d="M25 615 c-23 -22 -25 -32 -25 -118 0 -89 2 -96 26 -121 25 -24 33
@@ -366,6 +366,21 @@ export const GlobalSvgSelector = ({ id }: Props) => {
                -84 45 c-45 26 -86 46 -90 46 -3 0 -6 -44 -6 -98z"/>
                         <path d="M423 354 l-83 -45 0 -95 c0 -52 2 -94 5 -94 3 0 43 19 90 42 l85 42
                0 98 c0 54 -3 98 -7 98 -5 0 -45 -21 -90 -46z"/>
+                    </g>
+                </svg>)
+
+        case 'plus':
+            return (
+                <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                    width="64.000000pt" height="64.000000pt" viewBox="0 0 64.000000 64.000000"
+                    preserveAspectRatio="xMidYMid meet"> 
+                    <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)"
+                        fill="#000000" stroke="none">
+                        <path d="M286 624 c-3 -9 -6 -72 -6 -140 l0 -124 -124 0 c-68 0 -131 -3 -140
+-6 -21 -8 -21 -60 0 -68 9 -3 72 -6 140 -6 l124 0 0 -124 c0 -68 3 -131 6
+-140 8 -21 60 -21 68 0 3 9 6 72 6 140 l0 124 124 0 c68 0 131 3 140 6 9 4 16
+18 16 34 0 16 -7 30 -16 34 -9 3 -72 6 -140 6 l-124 0 0 124 c0 68 -3 131 -6
+140 -4 9 -18 16 -34 16 -16 0 -30 -7 -34 -16z"/>
                     </g>
                 </svg>
 

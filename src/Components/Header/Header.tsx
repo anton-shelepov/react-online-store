@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
 import s from './Header.module.scss'
-import { GlobalSvgSelector } from '../_assets/GlobalSvgSelector'
+import { GlobalSvgSelector } from '../_utils/GlobalSvgSelector'
 import SearchForm from '../_common/Forms/SearchForm/SearchForm'
-import { useAppSelector } from '../../utils/hooks/hooks'
+import { useAppSelector } from '../../utils/hooks/reduxHooks'
 import CatalogBurgerMenu from '../CatalogBurgerMenu/CatalogBurgerMenu'
 import MediaQuery from 'react-responsive'
-import { mediumWidth, smallWidth } from '../_assets/BreakpointsConsts'
+import { mediumWidth, smallWidth } from '../_utils/BreakpointsConsts'
 import SearchButton from '../_common/Buttons/SeacrhButton/SearchButton'
 
 type Props = {
@@ -37,7 +37,7 @@ const Header: React.FC<Props> = () => {
                     <div className={s.nav}>
                         <MediaQuery maxWidth={mediumWidth} minWidth={smallWidth}>
                             <SearchButton>Поиск</SearchButton>
-                        </MediaQuery> 
+                        </MediaQuery>
                         {
                             isAuth
                                 ? <>
