@@ -4,8 +4,6 @@
   <img src="https://user-images.githubusercontent.com/93414022/181659246-47776110-dd92-4ada-b926-c22ac708bb68.png" alt="Application logo"/>
 </p>
 
-<br/>
-
 # Инструкция по развертыванию проекта
 
 ## 1. Клонирование репозитория
